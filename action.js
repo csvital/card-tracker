@@ -78,16 +78,11 @@ function cardReader(jfQ){ // jfQ > jotform Question object
 	cardList.push(new Card(cardOrder,type,control_type[1]));
 }
 
-cardId = null;
 
-function findIsVisibleCard(){
-	console.log("welcome to my termination");
-	visibleCard = document.querySelectorAll('.isVisible');
+
+function cardTimerStart(){
+	console.log('new card loaded');
 	cardStartTime = new Date();
-	console.log(visibleCard);
-	console.log(visibleCard[0].id);
-	console.log("i'm the voice of war");
-	cardId = visibleCard[0].id;
 }
 
 function cardOnChange(){
@@ -95,13 +90,9 @@ function cardOnChange(){
 	//console.log(this);
 	cardEndTime = new Date();
 	elapsedTime = cardEndTime - cardStartTime;
+	console.log("User spend " + elapsedTime/1000 + " seconds on ? card on unique view.");
 	
-	
-	console.log("User spend " + elapsedTime/1000 + " seconds on " + cardId + " card on unique view.");
-
-	
-	findIsVisibleCard();
-
+	cardTimerStart();
 	//console.log("Her onchange'de cardListi basarim");
 	//console.log(cardList);
 }
@@ -115,9 +106,7 @@ function init () {
 		cardReader(jfQuestionFields[i]);
 	}
 	
-	// visible olani bul
-	findIsVisibleCard();
-
+	cardTimerStart();
 
 	var oldFunc = CardForm.setCardIndex;
 	CardForm.setCardIndex = (index) => {
@@ -126,13 +115,6 @@ function init () {
   		oldFunc(index);
 	};
 	
-	//var oldFunc = CardForm.setCardIndex;
-	//CardForm.setCardIndex = function(index){
- 	//	console.log("==>>"+index);
- 	//	cardOnChange();
-  	//	oldFunc(index);
-	//};
-
 	// textArea for detailed report
 	var textArea = document.getElementsByTagName('textarea');
 	console.log(textArea);
