@@ -91,8 +91,8 @@ function findIsVisibleCard(){
 }
 
 function cardOnChange(){
-	console.log("nexte, progresse veya preve basti");
-	console.log(this);
+	console.log("card changed");
+	//console.log(this);
 	cardEndTime = new Date();
 	elapsedTime = cardEndTime - cardStartTime;
 	
@@ -102,8 +102,8 @@ function cardOnChange(){
 	
 	findIsVisibleCard();
 
-	console.log("Her onchange'de cardListi basarim");
-	console.log(cardList);
+	//console.log("Her onchange'de cardListi basarim");
+	//console.log(cardList);
 }
 
 // Initialize the widget only select question fields and 
@@ -118,33 +118,20 @@ function init () {
 	// visible olani bul
 	findIsVisibleCard();
 
-	// next'e basildi mi?
-	// find next buttons and add listener for onchange events
-	var nextButtons = document.querySelectorAll('.forNext');
-	console.log(nextButtons);
-	for (var i = 0; i < nextButtons.length; i++) {
-		nextButtons[i].addEventListener("click", cardOnChange);
-	}
-	var prevButtons = document.querySelectorAll('.forPrev');
-	console.log(prevButtons);
-	for (var i = 0; i < prevButtons.length; i++) {
-		prevButtons[i].addEventListener("click", cardOnChange);
-	}
-
-	var progressItems = document.querySelectorAll('.jfProgress-item');
-	console.log("Progress Items");
-	console.log(progressItems);
-	for (var i = 0; i < progressItems.length; i++) {
-		progressItems[i].addEventListener("click", cardOnChange);
-	}
 
 	var oldFunc = CardForm.setCardIndex;
 	CardForm.setCardIndex = (index) => {
  		console.log("==>>"+index);
+ 		cardOnChange();
   		oldFunc(index);
 	};
-	// END
-
+	
+	//var oldFunc = CardForm.setCardIndex;
+	//CardForm.setCardIndex = function(index){
+ 	//	console.log("==>>"+index);
+ 	//	cardOnChange();
+  	//	oldFunc(index);
+	//};
 
 	// textArea for detailed report
 	var textArea = document.getElementsByTagName('textarea');
