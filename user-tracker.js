@@ -73,8 +73,16 @@ function endInteraction(){
 
 function init() {
 
+    var jfFields = document.getElementsByClassName("jfField");
+
+    console.log(jfFields);
+
+
+
+
     var done = document.getElementsByClassName("form-submit-button");
 
+    console.log(done);
     var texts = document.querySelectorAll("input[type=text]");
 
     var checkboxes = document.querySelectorAll("input[type=checkbox]");
