@@ -52,6 +52,7 @@ function cardReader(jfQ){ // jfQ > jotform Question object
 	//console.log('>>');
 	//console.log(jfQ.getElementsByTagName('input'));
 
+
 	var inputs = jfQ.getElementsByTagName('input');
 
 	//console.log(inputs[0]);
@@ -64,6 +65,7 @@ function cardReader(jfQ){ // jfQ > jotform Question object
 	}
 
 	// li element's control type
+	var type = jfQ.parentNode.parentNode.parentNode.getAttribute('data-type');
 	var control_type = jfQ.parentNode.parentNode.parentNode.getAttribute('data-type').split("control_");
 	
 	console.log("\t"+control_type[1]);
@@ -71,14 +73,21 @@ function cardReader(jfQ){ // jfQ > jotform Question object
 	for (var i = 0; i < jfQ.childElementCount; i++) {
 		console.log("\tfieldOrder : " + fieldOrder++);	
 	}
+
+	// create card array
+	cardList.push(new Card(cardOrder,type,control_type[1]));
 }
+
+cardId = null;
 
 function findIsVisibleCard(){
 	console.log("welcome to my termination");
 	visibleCard = document.querySelectorAll('.isVisible');
 	cardStartTime = new Date();
 	console.log(visibleCard);
+	console.log(visibleCard[0].id);
 	console.log("i'm the voice of war");
+	cardId = visibleCard[0].id;
 }
 
 function cardOnChange(){
@@ -86,8 +95,15 @@ function cardOnChange(){
 	console.log(this);
 	cardEndTime = new Date();
 	elapsedTime = cardEndTime - cardStartTime;
-	console.log("User spend " + elapsedTime/1000 + " seconds on " + this.id + " card on unique view.");
+	
+	
+	console.log("User spend " + elapsedTime/1000 + " seconds on " + cardId + " card on unique view.");
+
+	
 	findIsVisibleCard();
+
+	console.log("Her onchange'de cardListi basarim");
+	console.log(cardList);
 }
 
 // Initialize the widget only select question fields and 
@@ -122,10 +138,13 @@ function init () {
 		progressItems[i].addEventListener("click", cardOnChange);
 	}
 
+	var oldFunc = CardForm.setCardIndex;
+	CardForm.setCardIndex = (index) => {
+ 		console.log("==>>"+index);
+  		oldFunc(index);
+	};
+
 	// EOC
-
-
-
 
 
 	// textArea for detailed report
