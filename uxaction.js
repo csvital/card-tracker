@@ -1,10 +1,11 @@
 class Card {
-	constructor(order,type,name){
+	constructor(order,qid,type,name){
 		this.order = order;
+		this.qid = qid;
 		this.type = type;
 		this.name = name;
-		this.previewEvents = [];
-		this.previewFullTime = 0;
+		this.viewThroughTimes = [];
+		this.viewFullTime = 0;
 		this.fields = [];
 	}
 }
@@ -41,7 +42,7 @@ function textTimeCalculator(flag){
 // question field detailed reader and executioner
 var cardList = [];
 var cardOrder = 0;
-function cardReader(jfQ){ // jfQ > jotform Question object
+function cardReader(jfQLi){ // jfQLi > jotform Question li object
 	var fieldOrder = 0;
 	console.log("cardOrder : " + cardOrder);
 	//console.log(jfQ.parentNode.parentNode.parentNode.getAttribute('data-type'));
@@ -49,7 +50,7 @@ function cardReader(jfQ){ // jfQ > jotform Question object
 	//console.log('>>');
 	//console.log(jfQ.getElementsByTagName('input'));
 
-	var inputs = jfQ.getElementsByTagName('input');
+	var inputs = jfQLi.getElementsByTagName('input');
 
 	//console.log(inputs[0]);
 
@@ -61,33 +62,33 @@ function cardReader(jfQ){ // jfQ > jotform Question object
 	}
 
 	// li element's control type
-	var type = jfQ.parentNode.parentNode.parentNode.getAttribute('data-type');
-	var control_type = jfQ.parentNode.parentNode.parentNode.getAttribute('data-type').split("control_");
+	//var type = jfQ.parentNode.parentNode.parentNode.getAttribute('data-type');
+	//var control_type = jfQ.parentNode.parentNode.parentNode.getAttribute('data-type').split("control_");
 	
-	console.log("\t"+control_type[1]);
+	//console.log("\t"+control_type[1]);
 
-	for (var i = 0; i < jfQ.childElementCount; i++) {
-		console.log("\tfieldOrder : " + fieldOrder++);
+	//for (var i = 0; i < jfQLi.childElementCount; i++) {
+	//	console.log("\tfieldOrder : " + fieldOrder++);
 		//console.log("\t\t"+jfQ.children[i].children[i].id);	
-	}
-
+	//}
 	
+	
+	var type = jfQLi.getAttribute('data-type');
+	var control_type = jfQLi.getAttribute('data-type').split("control_");
+
 	// create card array
-	cardList.push(new Card(cardOrder++,type,control_type[1]));
+	cardList.push(new Card(cardOrder++,jfQLi.id,type,control_type[1]));
 
 
 }
 
-
+// control timer state
 var timerIndex = 0;
-
-function cardTimerStart(curr){
+function cardTimerStart(){
 	console.log('new card loaded');
-	console.log('card index :' + curr );
 	console.log('timer index :' + timerIndex );
 	cardStartTime = new Date();
 }
-
 function cardOnChange(newIndex){
 	console.log("card changed");
 	//console.log(this);
@@ -95,10 +96,12 @@ function cardOnChange(newIndex){
 	elapsedTime = cardEndTime - cardStartTime;
 	console.log("User spend " + elapsedTime/1000 + " seconds on " + timerIndex + " card on unique view.");
 	
+
+	// add time record to relevant card object
 	for (var i = 0; i < cardList.length; i++) {
 		//console.log(cardList[i]);
 		if(cardList[i].order == timerIndex){
-			cardList[i].previewEvents.push(elapsedTime);
+			cardList[i].viewThroughTimes.push(elapsedTime);
 		}
 	}
 
@@ -112,19 +115,17 @@ function cardOnChange(newIndex){
 // Initialize the widget only select question fields and 
 // pass them to reader
 function init () {
-	var jfQuestionFields = document.getElementsByClassName("jfQuestion-fields");
-	//console.log(jfQuestionFields);
-	for (var i = 0; i < jfQuestionFields.length; i++) {
-		cardReader(jfQuestionFields[i]);
+	var jfQuestionLi = document.getElementsByClassName('jfCard-wrapper');
+	for (var i = 0; i < jfQuestionLi.length; i++) {
+		cardReader(jfQuestionLi[i]);
 	}
+
 	console.log(cardList);
 	
 	cardTimerStart(0);
 
 	var oldFunc = CardForm.setCardIndex;
 	CardForm.setCardIndex = (index) => {
- 		console.log("==>>"+index);
- 		
  		cardOnChange(index);
   		oldFunc(index);
 	};
