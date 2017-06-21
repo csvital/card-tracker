@@ -1,1 +1,122 @@
-[{"order":0,"qid":"id_3","type":"control_email","name":"email","viewThroughTimes":[7789],"viewFullTime":7.789,"fields":[{"order":0,"type":"email","id":"input_3","name":"q3_email","events":[632,502,545],"fieldfullTime":1.679}]},{"order":1,"qid":"id_4","type":"control_fullname","name":"fullname","viewThroughTimes":[4336],"viewFullTime":4.336,"fields":[{"order":0,"type":"first","id":"first_4","name":"q4_name[first]","events":[514,518],"fieldfullTime":1.032},{"order":1,"type":"last","id":"last_4","name":"q4_name[last]","events":[511,976],"fieldfullTime":1.487}]},{"order":2,"qid":"id_5","type":"control_dropdown","name":"dropdown","viewThroughTimes":[],"viewFullTime":0,"fields":[]},{"order":3,"qid":"id_6","type":"control_checkbox","name":"checkbox","viewThroughTimes":[],"viewFullTime":0,"fields":[{"order":0,"type":null,"id":"","name":"clickTo[]","events":[],"fieldfullTime":0},{"order":1,"type":null,"id":"","name":"clickTo[]","events":[],"fieldfullTime":0},{"order":2,"type":null,"id":"","name":"clickTo[]","events":[],"fieldfullTime":0}]},{"order":4,"qid":"id_7","type":"control_radio","name":"radio","viewThroughTimes":[],"viewFullTime":0,"fields":[{"order":0,"type":null,"id":"","name":"clickTo","events":[],"fieldfullTime":0},{"order":1,"type":null,"id":"","name":"clickTo","events":[],"fieldfullTime":0},{"order":2,"type":null,"id":"","name":"clickTo","events":[],"fieldfullTime":0}]},{"order":5,"qid":"id_8","type":"control_textarea","name":"textarea","viewThroughTimes":[1488],"viewFullTime":1.488,"fields":[]}]
+[
+  {
+    "fields": [
+      {
+        "events": [
+          378,
+          396,
+          388
+        ],
+        "fieldfullTime": 1.162,
+        "id": "input_3",
+        "name": "q3_email",
+        "order": 0,
+        "type": "email"
+      }
+    ],
+    "name": "email",
+    "order": 0,
+    "qid": "id_3",
+    "type": "control_email",
+    "viewFullTime": 5.045,
+    "viewThroughTimes": [
+      5045
+    ]
+  },
+  {
+    "fields": [
+      {
+        "events": [
+          782,
+          473
+        ],
+        "fieldfullTime": 1.255,
+        "id": "first_4",
+        "name": "q4_name[first]",
+        "order": 0,
+        "type": "first"
+      },
+      {
+        "events": [
+          457,
+          664
+        ],
+        "fieldfullTime": 1.121,
+        "id": "last_4",
+        "name": "q4_name[last]",
+        "order": 1,
+        "type": "last"
+      }
+    ],
+    "name": "fullname",
+    "order": 1,
+    "qid": "id_4",
+    "type": "control_fullname",
+    "viewFullTime": 4.097,
+    "viewThroughTimes": [
+      3745,
+      58,
+      65,
+      70,
+      80,
+      79
+    ]
+  },
+  {
+    "fields": [],
+    "name": "dropdown",
+    "order": 2,
+    "qid": "id_5",
+    "type": "control_dropdown",
+    "viewFullTime": 2.054,
+    "viewThroughTimes": [
+      1431,
+      224,
+      103,
+      48,
+      55,
+      73,
+      120
+    ]
+  },
+  {
+    "fields": [],
+    "name": "checkbox",
+    "order": 3,
+    "qid": "id_6",
+    "type": "control_checkbox",
+    "viewFullTime": 1.488,
+    "viewThroughTimes": [
+      1351,
+      137
+    ]
+  },
+  {
+    "fields": [],
+    "name": "radio",
+    "order": 4,
+    "qid": "id_7",
+    "type": "control_radio",
+    "viewFullTime": 0.599,
+    "viewThroughTimes": [
+      111,
+      184,
+      152,
+      152
+    ]
+  },
+  {
+    "fields": [],
+    "name": "textarea",
+    "order": 5,
+    "qid": "id_8",
+    "type": "control_textarea",
+    "viewFullTime": 2.058,
+    "viewThroughTimes": [
+      352,
+      96,
+      160,
+      1450
+    ]
+  }
+]

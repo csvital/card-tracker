@@ -79,6 +79,12 @@ function cardReader(jfQLi){ // jfQLi > jotform Question li object
 	// this block counts time for 
 	// text fields focus and blur events
 	for (var i = 0; i < inputs.length; i++) {
+
+		// temporary exclude radio and checkboxes
+		if (inputs[i].getAttribute('data-component') == null) {
+			continue;
+		}
+
 		cardList[cardOrder].fields.push(new SubField(fieldOrder++,
 													 inputs[i].getAttribute('data-component'),
 													 inputs[i].id,
