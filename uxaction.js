@@ -8,6 +8,19 @@ class Card {
 		this.viewFullTime = 0;
 		this.fields = [];
 	}
+
+	get fullTime() {
+        return this.calcFullTime();
+    }
+
+    calcFullTime() {
+        var sum = 0;
+        for (var i = 0; i < this.viewThroughTimes.length; i++) {
+            sum += this.viewThroughTimes[i];
+        }
+        this.viewFullTime = sum/1000;
+        return this.viewFullTime;
+    }
 }
 class SubField {
 	constructor(order,type,id,name){
@@ -20,20 +33,14 @@ class SubField {
 	}
 }
 
-// text field'da gecen sureyi
-// hesaplayan adamlar
+// text field'da gecen sureyi hesaplayan adam
 function textTimeCalculator(flag){
-	//console.log(">>>>>>");
-	//console.log(flag.type);
-	// flag has event attributes
 	if(flag.type == 'focus'){
     	console.log("focused!! on " + this.id);
     	whenFocus = new Date();
-    	//console.log(whenFocus);
 	}else if (flag.type == 'blur') {
 		console.log("blured!! from " +this.id);
     	whenBlur = new Date();
-    	//console.log(whenBlur);
     	var tinyElapsed = whenBlur - whenFocus;
     	console.log("User spend " + tinyElapsed/1000 + " seconds on " + this.id + " field on unique event.");
 	}
@@ -45,14 +52,8 @@ var cardOrder = 0;
 function cardReader(jfQLi){ // jfQLi > jotform Question li object
 	var fieldOrder = 0;
 	console.log("cardOrder : " + cardOrder);
-	//console.log(jfQ.parentNode.parentNode.parentNode.getAttribute('data-type'));
-	//console.log(jfQ.children);
-	//console.log('>>');
-	//console.log(jfQ.getElementsByTagName('input'));
 
 	var inputs = jfQLi.getElementsByTagName('input');
-
-	//console.log(inputs[0]);
 
 	// this block counts time for 
 	// text fields focus and blur events
@@ -62,17 +63,7 @@ function cardReader(jfQLi){ // jfQLi > jotform Question li object
 	}
 
 	// li element's control type
-	//var type = jfQ.parentNode.parentNode.parentNode.getAttribute('data-type');
-	//var control_type = jfQ.parentNode.parentNode.parentNode.getAttribute('data-type').split("control_");
-	
-	//console.log("\t"+control_type[1]);
 
-	//for (var i = 0; i < jfQLi.childElementCount; i++) {
-	//	console.log("\tfieldOrder : " + fieldOrder++);
-		//console.log("\t\t"+jfQ.children[i].children[i].id);	
-	//}
-	
-	
 	var type = jfQLi.getAttribute('data-type');
 	var control_type = jfQLi.getAttribute('data-type').split("control_");
 
@@ -94,12 +85,10 @@ function cardOnChange(newIndex){
 	//console.log(this);
 	cardEndTime = new Date();
 	elapsedTime = cardEndTime - cardStartTime;
-	console.log("User spend " + elapsedTime/1000 + " seconds on " + timerIndex + " card on unique view.");
+	console.log("User spend " + elapsedTime/1000 + " seconds on card " + timerIndex + "  at single view.");
 	
-
 	// add time record to relevant card object
 	for (var i = 0; i < cardList.length; i++) {
-		//console.log(cardList[i]);
 		if(cardList[i].order == timerIndex){
 			cardList[i].viewThroughTimes.push(elapsedTime);
 		}
@@ -108,8 +97,22 @@ function cardOnChange(newIndex){
 	timerIndex = newIndex;
 
 	cardTimerStart();
-	//console.log("Her onchange'de cardListi basarim");
-	//console.log(cardList);
+}
+
+
+// submit aninda calisir, toplam sureleri hesaplar 
+// JSON yapar gonderir, helal olsundur.
+function writeResult(){
+	console.log('submit oldu');
+	cardOnChange(-1); // change on card (-1 exit)
+
+	for (var i = 0; i < cardList.length; i++) {
+		cardList[i].fullTime;
+	}
+	console.log(cardList);
+
+	var result = JSON.stringify(cardList);
+	console.log(result);
 }
 
 // Initialize the widget only select question fields and 
@@ -127,13 +130,23 @@ function init () {
 	var oldFunc = CardForm.setCardIndex;
 	CardForm.setCardIndex = (index) => {
  		cardOnChange(index);
+  		
   		oldFunc(index);
 	};
-	
+
+	//var oldFunc2 = CardForm.onSubmit;
+	//CardForm.onSubmit = (a) => {
+	//	console.log('submit yakaladım');
+	//	oldFunc(a);	
+	//}
+
+	var forSubmit = document.getElementsByClassName('jotform-form');
+	forSubmit[0].addEventListener('submit', writeResult);
+
 	// textArea for detailed report
 	var textArea = document.getElementsByTagName('textarea');
 	//console.log(textArea);
-	textArea[0].innerHTML = "Sa";
+	textArea[0].innerHTML = "sa";
 }
 
 window.onload = init;
