@@ -22,11 +22,12 @@ class Card {
     }
 }
 class SubField {
-	constructor(order,type,id,name){
+	constructor(order,type,id,name,length = -1){
 		this.order = order;
 		this.type = type;
 		this.id = id;
 		this.name = name;
+		this.length = length;
 		this.events = [];
 		this.fieldfullTime = 0;
 	}
@@ -82,22 +83,44 @@ function cardReader(jfQLi){ // jfQLi > jotform Question li object
 						   questionLabel.innerHTML.length)
 						);
 
+
+	console.log('---> control_type[1]', control_type[1]);
+
+
+
+
+
+
+
 	// input field analysis
 	var inputs = jfQLi.getElementsByTagName('input');
-	console.log('inputs', inputs);
+	
 	// this block counts time for 
 	// text fields focus and blur events
 	for (var i = 0; i < inputs.length; i++) {
-
+		console.log('--- --->i', i);
 		// temporarily exclude radio and checkboxes
 		if (inputs[i].getAttribute('data-component') == null) {
-			continue;
-		}
+			console.log('radio or selectboxes');
+			console.log('inputs[i]', inputs[i]);
+			console.log('inputs[i]', inputs[i].type);
+			console.log('inputs[i]', inputs[i].value);
+			console.log('var');
+			cardList[cardOrder].fields.push(new SubField(fieldOrder++, // field order in current card
+													 inputs[i].type, // what's the input
+													 -1, // default
+													 -1, // default
+													 inputs[i].value.length)); // answer's text length
 
-		cardList[cardOrder].fields.push(new SubField(fieldOrder++,
+			// interactionlari saymak lazim
+			
+
+		}else{
+			cardList[cardOrder].fields.push(new SubField(fieldOrder++,
 													 inputs[i].getAttribute('data-component'),
 													 inputs[i].id,
-													 inputs[i].name));
+													 inputs[i].name));	
+		}
 		inputs[i].addEventListener("focus", textTimeCalculator);
 		inputs[i].addEventListener("blur", textTimeCalculator);
 	}
@@ -165,11 +188,8 @@ function init () {
 	};
 
 	var forSubmit = document.getElementsByClassName('jotform-form');
+	console.log(cardList);
 	forSubmit[0].addEventListener('submit', writeResult);
 }
 
 window.onload = init;
-
-
-
-
