@@ -1,9 +1,10 @@
 class Card {
-	constructor(order,qid,type,name){
+	constructor(order,qid,type,name,questionLength = -1){
 		this.order = order;
 		this.qid = qid;
 		this.type = type;
 		this.name = name;
+		this.questionLength = questionLength;
 		this.viewThroughTimes = [];
 		this.viewFullTime = 0;
 		this.fields = [];
@@ -68,19 +69,27 @@ function cardReader(jfQLi){ // jfQLi > jotform Question li object
 	// li element's control type
 	var control_type = jfQLi.getAttribute('data-type').split("control_");
 
+	// for find question text's length
+	var questionLabel = jfQLi.querySelector(".jfQuestion-label");
+	// console.log('questionLabel : ', questionLabel.innerHTML);
+	// console.log('questionLabel -> length : ', questionLabel.innerHTML.length);
+
 	// create card array
 	cardList.push(new Card(cardOrder,
 						   jfQLi.id,
 						   jfQLi.getAttribute('data-type'),
-						   control_type[1]));
+						   control_type[1],
+						   questionLabel.innerHTML.length)
+						);
 
 	// input field analysis
 	var inputs = jfQLi.getElementsByTagName('input');
+	console.log('inputs', inputs);
 	// this block counts time for 
 	// text fields focus and blur events
 	for (var i = 0; i < inputs.length; i++) {
 
-		// temporary exclude radio and checkboxes
+		// temporarily exclude radio and checkboxes
 		if (inputs[i].getAttribute('data-component') == null) {
 			continue;
 		}
@@ -101,6 +110,8 @@ function cardTimerStart(){
 	cardStartTime = new Date();
 }
 function cardOnChange(newIndex){
+	if(newIndex == -1){return true;}
+
 	cardEndTime = new Date();
 	elapsedTime = cardEndTime - cardStartTime;
 	// add time record to relevant card object
@@ -129,7 +140,10 @@ function writeResult(){
     }
 	console.log(cardList);
 	var result = JSON.stringify(cardList);
+	
+	window.open("data:text/json," + encodeURIComponent(result), "_blank");
 	console.log(result);
+	debugger
 }
 
 // Initialize the widget only select question fields and 
@@ -140,7 +154,7 @@ function init () {
 		cardReader(jfQuestionLi[i]);
 	}
 
-	//console.log(cardList);
+	console.log(cardList);
 	
 	cardTimerStart(0);
 
