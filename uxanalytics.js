@@ -22,12 +22,14 @@ class Card {
     }
 }
 class SubField {
-	constructor(order,type,id,name,length = -1){
+	constructor(order,type,id,name,length = -1,value = -1){
 		this.order = order;
 		this.type = type;
 		this.id = id;
 		this.name = name;
 		this.length = length;
+		this.value = value;
+		this.interactionCount = 0;
 		this.events = [];
 		this.fieldfullTime = 0;
 	}
@@ -106,14 +108,42 @@ function cardReader(jfQLi){ // jfQLi > jotform Question li object
 			console.log('inputs[i]', inputs[i].type);
 			console.log('inputs[i]', inputs[i].value);
 			console.log('var');
+
+			var label = inputs[i].parentNode;
+			console.log('temp>>>>>', label);
+			label.addEventListener('click', function(){
+				
+				console.log('interact this ->>', this);
+				// console.log(this.querySelector('input').value);
+				// console.log('this.up', this.up('li'));
+
+				// count interactions
+				for (var i = 0; i < cardList.length; i++) {
+    				for (var j = 0; j < cardList[i].fields.length; j++) {
+    					
+    					if (this.up('li').id == cardList[i].qid && 
+    						this.querySelector('input').value == cardList[i].fields[j].value) {
+
+    						console.log('this.up.id', this.up('li').id);
+    					    console.log('cardList[i].qid', cardList[i].qid);
+    					    console.log('this.querySelector(input).value', this.querySelector('input').value);
+    					    console.log('cardList[i].fields[j].value', cardList[i].fields[j].value);
+
+							cardList[i].fields[j].interactionCount++;    
+    					}
+    				}
+    			}	
+			});
+
 			cardList[cardOrder].fields.push(new SubField(fieldOrder++, // field order in current card
 													 inputs[i].type, // what's the input
 													 -1, // default
-													 -1, // default
-													 inputs[i].value.length)); // answer's text length
+													 inputs[i].name, // default
+													 inputs[i].value.length,
+													 inputs[i].value)); // answer's text length
 
 			// interactionlari saymak lazim
-			
+
 
 		}else{
 			cardList[cardOrder].fields.push(new SubField(fieldOrder++,
@@ -159,14 +189,20 @@ function writeResult(){
 	for (var i = 0; i < cardList.length; i++) {
     	for (var j = 0; j < cardList[i].fields.length; j++) {
    				cardList[i].fields[j].fullTime;
+   				cardList[i].fields[j].interactionCount /= 2;
    	   	}
     }
 	console.log(cardList);
 	var result = JSON.stringify(cardList);
-	
-	window.open("data:text/json," + encodeURIComponent(result), "_blank");
-	console.log(result);
-	debugger
+
+	function download(text, name, type) {
+	    var a = document.createElement("a");
+	    var file = new Blob([text], {type: type});
+	    a.href = URL.createObjectURL(file);
+	    a.download = name;
+	    a.click();
+	}
+	download(result, 'ajdajdaj.txt', 'text/plain');	
 }
 
 // Initialize the widget only select question fields and 
