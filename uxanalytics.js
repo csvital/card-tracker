@@ -74,8 +74,6 @@ function cardReader(jfQLi){ // jfQLi > jotform Question li object
 
 	// for find question text's length
 	var questionLabel = jfQLi.querySelector(".jfQuestion-label");
-	// console.log('questionLabel : ', questionLabel.innerHTML);
-	// console.log('questionLabel -> length : ', questionLabel.innerHTML.length);
 
 	// create card array
 	cardList.push(new Card(cardOrder,
@@ -85,38 +83,23 @@ function cardReader(jfQLi){ // jfQLi > jotform Question li object
 						   questionLabel.innerHTML.length)
 						);
 
-
-	console.log('---> control_type[1]', control_type[1]);
-
-
-
-
-
-
-
 	// input field analysis
 	var inputs = jfQLi.getElementsByTagName('input');
 	
 	// this block counts time for 
 	// text fields focus and blur events
 	for (var i = 0; i < inputs.length; i++) {
-		console.log('--- --->i', i);
 		// temporarily exclude radio and checkboxes
 		if (inputs[i].getAttribute('data-component') == null) {
-			console.log('radio or selectboxes');
-			console.log('inputs[i]', inputs[i]);
-			console.log('inputs[i]', inputs[i].type);
-			console.log('inputs[i]', inputs[i].value);
-			console.log('var');
+			// radio or selextbox
 
-			var label = inputs[i].parentNode;
-			console.log('temp>>>>>', label);
-			label.addEventListener('click', function(){
+			var label = inputs[i].parentNode; // label
+			
+			label.addEventListener('click', function(e){
+
+				// TODO fix future two click problem
+				// console.log('e.currentTarget===e.target', e.currentTarget===e.target);
 				
-				console.log('interact this ->>', this);
-				// console.log(this.querySelector('input').value);
-				// console.log('this.up', this.up('li'));
-
 				// count interactions
 				for (var i = 0; i < cardList.length; i++) {
     				for (var j = 0; j < cardList[i].fields.length; j++) {
@@ -124,10 +107,10 @@ function cardReader(jfQLi){ // jfQLi > jotform Question li object
     					if (this.up('li').id == cardList[i].qid && 
     						this.querySelector('input').value == cardList[i].fields[j].value) {
 
-    						console.log('this.up.id', this.up('li').id);
-    					    console.log('cardList[i].qid', cardList[i].qid);
-    					    console.log('this.querySelector(input).value', this.querySelector('input').value);
-    					    console.log('cardList[i].fields[j].value', cardList[i].fields[j].value);
+    					    //console.log('this.up.id', this.up('li').id);
+    					 	//console.log('cardList[i].qid', cardList[i].qid);
+    					 	//console.log('this.querySelector(input).value', this.querySelector('input').value);
+    					    //console.log('cardList[i].fields[j].value', cardList[i].fields[j].value);
 
 							cardList[i].fields[j].interactionCount++;    
     					}
@@ -142,7 +125,7 @@ function cardReader(jfQLi){ // jfQLi > jotform Question li object
 													 inputs[i].value.length,
 													 inputs[i].value)); // answer's text length
 
-			// interactionlari saymak lazim
+			// interactionlari saymak lazim -> saydik 
 
 
 		}else{
@@ -192,7 +175,7 @@ function writeResult(){
    				cardList[i].fields[j].interactionCount /= 2;
    	   	}
     }
-	console.log(cardList);
+	//console.log(cardList);
 	var result = JSON.stringify(cardList);
 
 	function download(text, name, type) {
@@ -202,7 +185,7 @@ function writeResult(){
 	    a.download = name;
 	    a.click();
 	}
-	download(result, 'ajdajdaj.txt', 'text/plain');	
+	download(result, 'hfgsdfg.txt', 'text/plain');	
 }
 
 // Initialize the widget only select question fields and 
@@ -213,7 +196,7 @@ function init () {
 		cardReader(jfQuestionLi[i]);
 	}
 
-	console.log(cardList);
+	//console.log(cardList);
 	
 	cardTimerStart(0);
 
@@ -223,9 +206,22 @@ function init () {
   		oldFunc(index);
 	};
 
+	var oldFunc2 = CardForm.bindCardClickEvents;
+	CardForm.bindCardClickEvents = (clickevents) => {
+ 		console.log('clickevents', clickevents);
+  		oldFunc2(clickevents);
+	};
+
 	var forSubmit = document.getElementsByClassName('jotform-form');
-	console.log(cardList);
 	forSubmit[0].addEventListener('submit', writeResult);
 }
 
 window.onload = init;
+
+// when user leaves the page
+//window.onbeforeunload = confirmExit;
+//function confirmExit()
+//{
+//	console.log('cardOrder', cardOrder);
+	//return "You have attempted to leave this page. If you have made any changes to the fields without clicking the Save button, your changes will be lost.  Are you sure you want to exit this page?";
+//}
