@@ -68,10 +68,9 @@ var cardList = [];
 var cardOrder = 0;
 function cardReader(jfQLi){ // jfQLi > jotform Question li object
 	var fieldOrder = 0;
-
 	// li element's control type
-	var control_type = jfQLi.getAttribute('data-type').split("control_");
-
+	var control_type = jfQLi.getAttribute('data-type');
+	var type = jfQLi.getAttribute('data-type').split('control_');
 	// for find question text's length
 	var questionLabel = jfQLi.querySelector(".jfQuestion-label");
 
@@ -79,7 +78,7 @@ function cardReader(jfQLi){ // jfQLi > jotform Question li object
 	cardList.push(new Card(cardOrder,
 						   jfQLi.id,
 						   jfQLi.getAttribute('data-type'),
-						   control_type[1],
+						   control_type.length > 1 ? type[1] : control_type,
 						   questionLabel.innerHTML.length)
 						);
 
@@ -146,7 +145,7 @@ function cardTimerStart(){
 	cardStartTime = new Date();
 }
 function cardOnChange(newIndex){
-	if(newIndex == -1){return true;}
+
 
 	cardEndTime = new Date();
 	elapsedTime = cardEndTime - cardStartTime;
@@ -155,6 +154,9 @@ function cardOnChange(newIndex){
 		if(cardList[i].order == timerIndex){
 			cardList[i].viewThroughTimes.push(elapsedTime);
 		}
+	}
+	if(newIndex == -1) {
+		return;
 	}
 	timerIndex = newIndex;
 	cardTimerStart();
@@ -185,13 +187,13 @@ function writeResult(){
 	    a.download = name;
 	    a.click();
 	}
-	download(result, 'hfgsdfg.txt', 'text/plain');	
+	// download(result, 'hfgsdfg.txt', 'text/plain');	
 }
 
 // Initialize the widget only select question fields and 
 // pass them to reader
 function init () {
-	var jfQuestionLi = document.getElementsByClassName('jfCard-wrapper');
+	var jfQuestionLi = document.getElementsByClassName('form-line');
 	for (var i = 0; i < jfQuestionLi.length; i++) {
 		cardReader(jfQuestionLi[i]);
 	}
@@ -204,12 +206,6 @@ function init () {
 	CardForm.setCardIndex = (index) => {
  		cardOnChange(index);
   		oldFunc(index);
-	};
-
-	var oldFunc2 = CardForm.bindCardClickEvents;
-	CardForm.bindCardClickEvents = (clickevents) => {
- 		console.log('clickevents', clickevents);
-  		oldFunc2(clickevents);
 	};
 
 	var forSubmit = document.getElementsByClassName('jotform-form');
