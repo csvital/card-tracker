@@ -2,36 +2,173 @@
 
 <head>
     <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms//stylebuilder/71924160223953.css" />
-    <title>Heading</title>
+    <title>error counter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <div>
+        <script src="https://cdn.jotfor.ms/js/vendor/imageinfo.js?v=3.3.972" type="text/javascript"></script>
+        <script src="https://cdn.jotfor.ms/js/prototype.js?v=3.3.972" type="text/javascript"></script>
+        <script src="https://cdn.jotfor.ms/js/vendor/json2.js?v=3.3.972" type="text/javascript"></script>
+        <script src="https://cdn.jotfor.ms/js/protoplus.js?v=3.3.972" type="text/javascript"></script>
+        <script src="https://cdn.jotfor.ms/js/protoplus-ui-form.js?v=3.3.972" type="text/javascript"></script>
+        <script src="https://cdn.jotfor.ms/js/jotform.js?v=3.3.972" type="text/javascript"></script>
+        <script src="https://cdn.jotfor.ms/js/calendarview.js?v=3.3.972" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+        JotForm.debug = true;
+        JotForm.init(function() {
+            JotForm.alterTexts({
+                "alphabetic": "This field can only contain letters",
+                "alphanumeric": "This field can only contain letters and numbers.",
+                "ccDonationMinLimitError": "Minimum amount is {minAmount} {currency}",
+                "ccInvalidCVC": "CVC number is invalid.",
+                "ccInvalidExpireDate": "Expire date is invalid.",
+                "ccInvalidNumber": "Credit Card Number is invalid.",
+                "ccMissingDetails": "Please fill up the Credit Card details.",
+                "ccMissingDonation": "Please enter numeric values for donation amount.",
+                "ccMissingProduct": "Please select at least one product.",
+                "characterLimitError": "Too many Characters.  The limit is",
+                "characterMinLimitError": "Too few characters. The minimum is",
+                "confirmClearForm": "Are you sure you want to clear the form?",
+                "confirmEmail": "E-mail does not match",
+                "currency": "This field can only contain currency values.",
+                "cyrillic": "This field can only contain cyrillic characters",
+                "dateInvalid": "This date is not valid. The date format is {format}",
+                "dateInvalidSeparate": "This date is not valid. Enter a valid {element}.",
+                "dateLimited": "This date is unavailable.",
+                "disallowDecimals": "Please enter a whole number.",
+                "email": "Enter a valid e-mail address",
+                "fillMask": "Field value must fill mask.",
+                "freeEmailError": "Free email accounts are not allowed",
+                "generalError": "There are errors on the form. Please fix them before continuing.",
+                "generalPageError": "There are errors on this page. Please fix them before continuing.",
+                "gradingScoreError": "Score total should only be less than or equal to",
+                "incompleteFields": "There are incomplete required fields. Please complete them.",
+                "inputCarretErrorA": "Input should not be less than the minimum value:",
+                "inputCarretErrorB": "Input should not be greater than the maximum value:",
+                "lessThan": "Your score should be less than or equal to",
+                "maxDigitsError": "The maximum digits allowed is",
+                "maxSelectionsError": "The maximum number of selections allowed is",
+                "minSelectionsError": "The minimum required number of selections is",
+                "multipleFileUploads_emptyError": "{file} is empty, please select files again without it.",
+                "multipleFileUploads_fileLimitError": "Only {fileLimit} file uploads allowed.",
+                "multipleFileUploads_minSizeError": "{file} is too small, minimum file size is {minSizeLimit}.",
+                "multipleFileUploads_onLeave": "The files are being uploaded, if you leave now the upload will be cancelled.",
+                "multipleFileUploads_sizeError": "{file} is too large, maximum file size is {sizeLimit}.",
+                "multipleFileUploads_typeError": "{file} has invalid extension. Only {extensions} are allowed.",
+                "numeric": "This field can only contain numeric values",
+                "pastDatesDisallowed": "Date must not be in the past.",
+                "pleaseWait": "Please wait...",
+                "required": "This field is required.",
+                "requireEveryCell": "Every cell is required.",
+                "requireEveryRow": "Every row is required.",
+                "requireOne": "At least one field required.",
+                "submissionLimit": "Sorry! Only one entry is allowed.  Multiple submissions are disabled for this form.",
+                "uploadExtensions": "You can only upload following files:",
+                "uploadFilesize": "File size cannot be bigger than:",
+                "uploadFilesizemin": "File size cannot be smaller than:",
+                "url": "This field can only contain a valid URL",
+                "wordLimitError": "Too many words. The limit is",
+                "wordMinLimitError": "Too few words.  The minimum is"
+            });
+            JotForm.clearFieldOnHide = "disable";
+            JotForm.submitError = "jumpToFirstError";
+        });
+
+        JotForm.prepareCalculationsOnTheFly([null, null, {
+            "name": "name",
+            "qid": "2",
+            "text": "Name",
+            "type": "control_fullname"
+        }, {
+            "name": "email",
+            "qid": "3",
+            "text": "E-mail",
+            "type": "control_email"
+        }, {
+            "name": "address",
+            "qid": "4",
+            "text": "Address",
+            "type": "control_address"
+        }, {
+            "name": "phoneNumber",
+            "qid": "5",
+            "text": "Phone Number",
+            "type": "control_phone"
+        }, {
+            "name": "date",
+            "qid": "6",
+            "text": "Date",
+            "type": "control_datetime"
+        }, {
+            "name": "shortText",
+            "qid": "7",
+            "text": "Short Text Entry",
+            "type": "control_textbox"
+        }, {
+            "name": "longText",
+            "qid": "8",
+            "text": "Long Text Entry",
+            "type": "control_textarea"
+        }, {
+            "name": "clickTo9",
+            "qid": "9",
+            "text": "<p>Text</p>",
+            "type": "control_text"
+        }, {
+            "name": "dropdown",
+            "qid": "10",
+            "text": "Dropdown",
+            "type": "control_dropdown"
+        }, {
+            "name": "radioactive",
+            "qid": "11",
+            "text": "Radioactive",
+            "type": "control_radio"
+        }, {
+            "name": "checkboxes",
+            "qid": "12",
+            "text": "Checkboxes",
+            "type": "control_checkbox"
+        }, {
+            "name": "number",
+            "qid": "13",
+            "text": "Number",
+            "type": "control_number"
+        }, {
+            "name": "image",
+            "qid": "14",
+            "text": "True Mirror.622",
+            "type": "control_image"
+        }, {
+            "name": "upload",
+            "qid": "15",
+            "text": "Upload",
+            "type": "control_fileupload"
+        }]);
+        </script>
+    </div>
 </head>
 
 <body>
     <div class="jfForm-wrapper">
-        <div class="jfWelcome-wrapper">
-            <div class="jfWelcome">
-                <div class="jfWelcome-imageWrapper"><img class="jfWelcome-image" src="https://www.jotform.com/images/form_welcome.svg" /></div>
-                <h1 id="header_welcomePage" class="jfWelcome-header form-header" data-component="header">Welcome</h1>
-                <p id="subHeader_welcomePage" class="jfWelcome-description form-subHeader">Please fill all questions.</p>
-                <div class="jfWelcome-buttonWrapper">
-                    <button class="jfWelcome-button" id="jfCard-welcome-start">START</button>
-                </div>
-            </div>
-        </div>
         <form class="jotform-form" id="71924160223953" name="form_71924160223953" action="https://submit.jotformpro.com/submit/71924160223953/" method="post">
             <input type="hidden" name="formID" value="71924160223953" />
             <ul class="jfForm-all form-section page-section form-all" id="cardAnimationWrapper">
-                <li class="form-line" data-type="control_email" id="id_2">
+                <li class="form-line" data-type="control_fullname" id="id_2">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
                             <div class="jfCard-index">1</div>
                             <div class="jfCard-question">
-                                <label for="input_2" class="jfQuestion-label isCenterAlign">E-mail</label>
+                                <label for="first_2" class="jfQuestion-label isCenterAlign">Name</label>
                                 <p class="jfQuestion-description" id="input_2_description"></p>
-                                <div class="jfQuestion-fields">
-                                    <div class="jfField" data-type="email">
-                                        <input type="email" id="input_2" name="q2_email" class="form-textbox validate[Email] forEmail jfInput-input" size="30" value="" data-component="email" aria-required="false" aria-describedby="input_2_description" />
-                                        <div class="jfField-sublabel" for="input_2">example@example.com</div>
+                                <div class="jfQuestion-fields" data-wrapper-react="true">
+                                    <div class="jfField" data-type="first">
+                                        <input type="text" id="first_2" name="q2_name[first]" class="form-textbox forFullname jfInput-input" size="10" value="" data-component="first" aria-required="false" aria-describedby="first_2_description" />
+                                        <div class="jfField-sublabel" for="first_2">First Name</div>
+                                    </div>
+                                    <div class="jfField" data-type="last">
+                                        <input type="text" id="last_2" name="q2_name[last]" class="form-textbox forFullname jfInput-input" size="15" value="" data-component="last" aria-required="false" aria-describedby="last_2_description" />
+                                        <div class="jfField-sublabel" for="last_2">Last Name</div>
                                     </div>
                                 </div>
                             </div>
@@ -41,27 +178,733 @@
                         </div>
                     </div>
                 </li>
-                <li class="form-line" data-type="control_dropdown" id="id_3">
+                <li class="form-line" data-type="control_email" id="id_3">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
                             <div class="jfCard-index">2</div>
                             <div class="jfCard-question">
-                                <label for="input_3" class="jfQuestion-label isCenterAlign">What&amp;#039;s your purpose of visit?</label>
+                                <label for="input_3" class="jfQuestion-label isCenterAlign">E-mail</label>
                                 <p class="jfQuestion-description" id="input_3_description"></p>
                                 <div class="jfQuestion-fields">
+                                    <div class="jfField" data-type="email">
+                                        <input type="email" id="input_3" name="q3_email" class="form-textbox validate[Email] forEmail jfInput-input" size="30" value="" data-component="email" aria-required="false" aria-describedby="input_3_description" />
+                                        <div class="jfField-sublabel" for="input_3">example@example.com</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jfCard-actions">
+                                <button type="button" class="jfInput-button forPrev u-left" data-component="button">Previous</button>
+                                <button type="button" class="jfInput-button forNext u-right" data-component="button">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_address" id="id_4">
+                    <div class="jfCard-wrapper">
+                        <div class="jfCard">
+                            <div class="jfCard-index">3</div>
+                            <div class="jfCard-question">
+                                <label for="input_4_addr_line1" class="jfQuestion-label isCenterAlign">Address</label>
+                                <p class="jfQuestion-description" id="input_4_description"></p>
+                                <div class="jfQuestion-fields" data-wrapper-react="true">
+                                    <div class="jfField" data-type="address_line_1">
+                                        <input type="text" id="input_4_addr_line1" name="q4_address[addr_line1]" class="form-textbox form-address-line form-address-addr1 forAddress jfInput-input" value="" data-component="address_line_1" aria-required="false" aria-describedby="input_4_addr_line1_description" />
+                                        <div class="jfField-sublabel" for="input_4_addr_line1">Street Address</div>
+                                    </div>
+                                    <div class="jfField" data-type="address_line_2">
+                                        <input type="text" id="input_4_addr_line2" name="q4_address[addr_line2]" class="form-textbox form-address-line form-address-addr2 forAddress jfInput-input" size="46" value="" data-component="address_line_2" aria-required="false" aria-describedby="input_4_addr_line2_description" />
+                                        <div class="jfField-sublabel" for="input_4_addr_line2">Street Address Line 2</div>
+                                    </div>
+                                    <div class="jfField" data-type="city">
+                                        <input type="text" id="input_4_city" name="q4_address[city]" class="form-textbox form-address-city forAddress jfInput-input" size="21" value="" data-component="city" aria-required="false" aria-describedby="input_4_city_description" />
+                                        <div class="jfField-sublabel" for="input_4_city">City</div>
+                                    </div>
+                                    <div class="jfField" data-type="state">
+                                        <input type="text" id="input_4_state" name="q4_address[state]" class="form-textbox form-address-state forAddress jfInput-input" size="22" value="" data-component="state" aria-required="false" aria-describedby="input_4_state_description" />
+                                        <div class="jfField-sublabel" for="input_4_state">State / Province</div>
+                                    </div>
+                                    <div class="jfField" data-type="zip">
+                                        <input type="text" id="input_4_postal" name="q4_address[postal]" class="form-textbox form-address-postal forAddress jfInput-input" size="10" value="" data-component="zip" aria-required="false" aria-describedby="input_4_postal_description" />
+                                        <div class="jfField-sublabel" for="input_4_postal">Postal / Zip Code</div>
+                                    </div>
+                                    <div class="jfField" data-type="country" style="display:none;">
+                                        <select data-component="country" id="input_4_country" name="q4_address[country]" class="form-dropdown form-address-country">
+                                            <option value="">Please Select</option>
+                                            <option value="United States">United States</option>
+                                            <option value="Afghanistan">Afghanistan</option>
+                                            <option value="Albania">Albania</option>
+                                            <option value="Algeria">Algeria</option>
+                                            <option value="American Samoa">American Samoa</option>
+                                            <option value="Andorra">Andorra</option>
+                                            <option value="Angola">Angola</option>
+                                            <option value="Anguilla">Anguilla</option>
+                                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                            <option value="Argentina">Argentina</option>
+                                            <option value="Armenia">Armenia</option>
+                                            <option value="Aruba">Aruba</option>
+                                            <option value="Australia">Australia</option>
+                                            <option value="Austria">Austria</option>
+                                            <option value="Azerbaijan">Azerbaijan</option>
+                                            <option value="The Bahamas">The Bahamas</option>
+                                            <option value="Bahrain">Bahrain</option>
+                                            <option value="Bangladesh">Bangladesh</option>
+                                            <option value="Barbados">Barbados</option>
+                                            <option value="Belarus">Belarus</option>
+                                            <option value="Belgium">Belgium</option>
+                                            <option value="Belize">Belize</option>
+                                            <option value="Benin">Benin</option>
+                                            <option value="Bermuda">Bermuda</option>
+                                            <option value="Bhutan">Bhutan</option>
+                                            <option value="Bolivia">Bolivia</option>
+                                            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                                            <option value="Botswana">Botswana</option>
+                                            <option value="Brazil">Brazil</option>
+                                            <option value="Brunei">Brunei</option>
+                                            <option value="Bulgaria">Bulgaria</option>
+                                            <option value="Burkina Faso">Burkina Faso</option>
+                                            <option value="Burundi">Burundi</option>
+                                            <option value="Cambodia">Cambodia</option>
+                                            <option value="Cameroon">Cameroon</option>
+                                            <option value="Canada">Canada</option>
+                                            <option value="Cape Verde">Cape Verde</option>
+                                            <option value="Cayman Islands">Cayman Islands</option>
+                                            <option value="Central African Republic">Central African Republic</option>
+                                            <option value="Chad">Chad</option>
+                                            <option value="Chile">Chile</option>
+                                            <option value="China">China</option>
+                                            <option value="Christmas Island">Christmas Island</option>
+                                            <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                                            <option value="Colombia">Colombia</option>
+                                            <option value="Comoros">Comoros</option>
+                                            <option value="Congo">Congo</option>
+                                            <option value="Cook Islands">Cook Islands</option>
+                                            <option value="Costa Rica">Costa Rica</option>
+                                            <option value="Cote d&#x27;Ivoire">Cote d&#x27;Ivoire</option>
+                                            <option value="Croatia">Croatia</option>
+                                            <option value="Cuba">Cuba</option>
+                                            <option value="Cyprus">Cyprus</option>
+                                            <option value="Czech Republic">Czech Republic</option>
+                                            <option value="Democratic Republic of the Congo">Democratic Republic of the Congo</option>
+                                            <option value="Denmark">Denmark</option>
+                                            <option value="Djibouti">Djibouti</option>
+                                            <option value="Dominica">Dominica</option>
+                                            <option value="Dominican Republic">Dominican Republic</option>
+                                            <option value="Ecuador">Ecuador</option>
+                                            <option value="Egypt">Egypt</option>
+                                            <option value="El Salvador">El Salvador</option>
+                                            <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                            <option value="Eritrea">Eritrea</option>
+                                            <option value="Estonia">Estonia</option>
+                                            <option value="Ethiopia">Ethiopia</option>
+                                            <option value="Falkland Islands">Falkland Islands</option>
+                                            <option value="Faroe Islands">Faroe Islands</option>
+                                            <option value="Fiji">Fiji</option>
+                                            <option value="Finland">Finland</option>
+                                            <option value="France">France</option>
+                                            <option value="French Polynesia">French Polynesia</option>
+                                            <option value="Gabon">Gabon</option>
+                                            <option value="The Gambia">The Gambia</option>
+                                            <option value="Georgia">Georgia</option>
+                                            <option value="Germany">Germany</option>
+                                            <option value="Ghana">Ghana</option>
+                                            <option value="Gibraltar">Gibraltar</option>
+                                            <option value="Greece">Greece</option>
+                                            <option value="Greenland">Greenland</option>
+                                            <option value="Grenada">Grenada</option>
+                                            <option value="Guadeloupe">Guadeloupe</option>
+                                            <option value="Guam">Guam</option>
+                                            <option value="Guatemala">Guatemala</option>
+                                            <option value="Guernsey">Guernsey</option>
+                                            <option value="Guinea">Guinea</option>
+                                            <option value="Guinea-Bissau">Guinea-Bissau</option>
+                                            <option value="Guyana">Guyana</option>
+                                            <option value="Haiti">Haiti</option>
+                                            <option value="Honduras">Honduras</option>
+                                            <option value="Hong Kong">Hong Kong</option>
+                                            <option value="Hungary">Hungary</option>
+                                            <option value="Iceland">Iceland</option>
+                                            <option value="India">India</option>
+                                            <option value="Indonesia">Indonesia</option>
+                                            <option value="Iran">Iran</option>
+                                            <option value="Iraq">Iraq</option>
+                                            <option value="Ireland">Ireland</option>
+                                            <option value="Israel">Israel</option>
+                                            <option value="Italy">Italy</option>
+                                            <option value="Jamaica">Jamaica</option>
+                                            <option value="Japan">Japan</option>
+                                            <option value="Jersey">Jersey</option>
+                                            <option value="Jordan">Jordan</option>
+                                            <option value="Kazakhstan">Kazakhstan</option>
+                                            <option value="Kenya">Kenya</option>
+                                            <option value="Kiribati">Kiribati</option>
+                                            <option value="North Korea">North Korea</option>
+                                            <option value="South Korea">South Korea</option>
+                                            <option value="Kosovo">Kosovo</option>
+                                            <option value="Kuwait">Kuwait</option>
+                                            <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                            <option value="Laos">Laos</option>
+                                            <option value="Latvia">Latvia</option>
+                                            <option value="Lebanon">Lebanon</option>
+                                            <option value="Lesotho">Lesotho</option>
+                                            <option value="Liberia">Liberia</option>
+                                            <option value="Libya">Libya</option>
+                                            <option value="Liechtenstein">Liechtenstein</option>
+                                            <option value="Lithuania">Lithuania</option>
+                                            <option value="Luxembourg">Luxembourg</option>
+                                            <option value="Macau">Macau</option>
+                                            <option value="Macedonia">Macedonia</option>
+                                            <option value="Madagascar">Madagascar</option>
+                                            <option value="Malawi">Malawi</option>
+                                            <option value="Malaysia">Malaysia</option>
+                                            <option value="Maldives">Maldives</option>
+                                            <option value="Mali">Mali</option>
+                                            <option value="Malta">Malta</option>
+                                            <option value="Marshall Islands">Marshall Islands</option>
+                                            <option value="Martinique">Martinique</option>
+                                            <option value="Mauritania">Mauritania</option>
+                                            <option value="Mauritius">Mauritius</option>
+                                            <option value="Mayotte">Mayotte</option>
+                                            <option value="Mexico">Mexico</option>
+                                            <option value="Micronesia">Micronesia</option>
+                                            <option value="Moldova">Moldova</option>
+                                            <option value="Monaco">Monaco</option>
+                                            <option value="Mongolia">Mongolia</option>
+                                            <option value="Montenegro">Montenegro</option>
+                                            <option value="Montserrat">Montserrat</option>
+                                            <option value="Morocco">Morocco</option>
+                                            <option value="Mozambique">Mozambique</option>
+                                            <option value="Myanmar">Myanmar</option>
+                                            <option value="Nagorno-Karabakh">Nagorno-Karabakh</option>
+                                            <option value="Namibia">Namibia</option>
+                                            <option value="Nauru">Nauru</option>
+                                            <option value="Nepal">Nepal</option>
+                                            <option value="Netherlands">Netherlands</option>
+                                            <option value="Netherlands Antilles">Netherlands Antilles</option>
+                                            <option value="New Caledonia">New Caledonia</option>
+                                            <option value="New Zealand">New Zealand</option>
+                                            <option value="Nicaragua">Nicaragua</option>
+                                            <option value="Niger">Niger</option>
+                                            <option value="Nigeria">Nigeria</option>
+                                            <option value="Niue">Niue</option>
+                                            <option value="Norfolk Island">Norfolk Island</option>
+                                            <option value="Turkish Republic of Northern Cyprus">Turkish Republic of Northern Cyprus</option>
+                                            <option value="Northern Mariana">Northern Mariana</option>
+                                            <option value="Norway">Norway</option>
+                                            <option value="Oman">Oman</option>
+                                            <option value="Pakistan">Pakistan</option>
+                                            <option value="Palau">Palau</option>
+                                            <option value="Palestine">Palestine</option>
+                                            <option value="Panama">Panama</option>
+                                            <option value="Papua New Guinea">Papua New Guinea</option>
+                                            <option value="Paraguay">Paraguay</option>
+                                            <option value="Peru">Peru</option>
+                                            <option value="Philippines">Philippines</option>
+                                            <option value="Pitcairn Islands">Pitcairn Islands</option>
+                                            <option value="Poland">Poland</option>
+                                            <option value="Portugal">Portugal</option>
+                                            <option value="Puerto Rico">Puerto Rico</option>
+                                            <option value="Qatar">Qatar</option>
+                                            <option value="Republic of the Congo">Republic of the Congo</option>
+                                            <option value="Romania">Romania</option>
+                                            <option value="Russia">Russia</option>
+                                            <option value="Rwanda">Rwanda</option>
+                                            <option value="Saint Barthelemy">Saint Barthelemy</option>
+                                            <option value="Saint Helena">Saint Helena</option>
+                                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                            <option value="Saint Lucia">Saint Lucia</option>
+                                            <option value="Saint Martin">Saint Martin</option>
+                                            <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                                            <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+                                            <option value="Samoa">Samoa</option>
+                                            <option value="San Marino">San Marino</option>
+                                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                            <option value="Saudi Arabia">Saudi Arabia</option>
+                                            <option value="Senegal">Senegal</option>
+                                            <option value="Serbia">Serbia</option>
+                                            <option value="Seychelles">Seychelles</option>
+                                            <option value="Sierra Leone">Sierra Leone</option>
+                                            <option value="Singapore">Singapore</option>
+                                            <option value="Slovakia">Slovakia</option>
+                                            <option value="Slovenia">Slovenia</option>
+                                            <option value="Solomon Islands">Solomon Islands</option>
+                                            <option value="Somalia">Somalia</option>
+                                            <option value="Somaliland">Somaliland</option>
+                                            <option value="South Africa">South Africa</option>
+                                            <option value="South Ossetia">South Ossetia</option>
+                                            <option value="South Sudan">South Sudan</option>
+                                            <option value="Spain">Spain</option>
+                                            <option value="Sri Lanka">Sri Lanka</option>
+                                            <option value="Sudan">Sudan</option>
+                                            <option value="Suriname">Suriname</option>
+                                            <option value="Svalbard">Svalbard</option>
+                                            <option value="Swaziland">Swaziland</option>
+                                            <option value="Sweden">Sweden</option>
+                                            <option value="Switzerland">Switzerland</option>
+                                            <option value="Syria">Syria</option>
+                                            <option value="Taiwan">Taiwan</option>
+                                            <option value="Tajikistan">Tajikistan</option>
+                                            <option value="Tanzania">Tanzania</option>
+                                            <option value="Thailand">Thailand</option>
+                                            <option value="Timor-Leste">Timor-Leste</option>
+                                            <option value="Togo">Togo</option>
+                                            <option value="Tokelau">Tokelau</option>
+                                            <option value="Tonga">Tonga</option>
+                                            <option value="Transnistria Pridnestrovie">Transnistria Pridnestrovie</option>
+                                            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                            <option value="Tristan da Cunha">Tristan da Cunha</option>
+                                            <option value="Tunisia">Tunisia</option>
+                                            <option value="Turkey">Turkey</option>
+                                            <option value="Turkmenistan">Turkmenistan</option>
+                                            <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                                            <option value="Tuvalu">Tuvalu</option>
+                                            <option value="Uganda">Uganda</option>
+                                            <option value="Ukraine">Ukraine</option>
+                                            <option value="United Arab Emirates">United Arab Emirates</option>
+                                            <option value="United Kingdom">United Kingdom</option>
+                                            <option value="Uruguay">Uruguay</option>
+                                            <option value="Uzbekistan">Uzbekistan</option>
+                                            <option value="Vanuatu">Vanuatu</option>
+                                            <option value="Vatican City">Vatican City</option>
+                                            <option value="Venezuela">Venezuela</option>
+                                            <option value="Vietnam">Vietnam</option>
+                                            <option value="British Virgin Islands">British Virgin Islands</option>
+                                            <option value="Isle of Man">Isle of Man</option>
+                                            <option value="US Virgin Islands">US Virgin Islands</option>
+                                            <option value="Wallis and Futuna">Wallis and Futuna</option>
+                                            <option value="Western Sahara">Western Sahara</option>
+                                            <option value="Yemen">Yemen</option>
+                                            <option value="Zambia">Zambia</option>
+                                            <option value="Zimbabwe">Zimbabwe</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <div tabindex="0" class="jfInput-dropdown hasSearch" datatype="multiselect">
+                                            <div class="jfDropdown-wrapper" tabindex="-1">
+                                                <div class="jfDropdown-chipContainer"><span class="jfDropdown-chip isSingle" style="display:none;"></span>
+                                                    <div class="jfDropdown-searchWrapper">
+                                                        <input class="jfDropdown-search" placeholder="Search" type="text" />
+                                                    </div>
+                                                </div><span class="jfDropdown-toggle"><i class="fa fa-caret-down"></i></span></div>
+                                            <div class="jfDropdown-optionListWrapper">
+                                                <ul data-component="country" class="jfDropdown-optionList form-dropdown">
+                                                    <li data-value="" class="jfDropdown-optionListItem">Please Select</li>
+                                                    <li data-value="United States" class="jfDropdown-optionListItem">United States</li>
+                                                    <li data-value="Afghanistan" class="jfDropdown-optionListItem">Afghanistan</li>
+                                                    <li data-value="Albania" class="jfDropdown-optionListItem">Albania</li>
+                                                    <li data-value="Algeria" class="jfDropdown-optionListItem">Algeria</li>
+                                                    <li data-value="American Samoa" class="jfDropdown-optionListItem">American Samoa</li>
+                                                    <li data-value="Andorra" class="jfDropdown-optionListItem">Andorra</li>
+                                                    <li data-value="Angola" class="jfDropdown-optionListItem">Angola</li>
+                                                    <li data-value="Anguilla" class="jfDropdown-optionListItem">Anguilla</li>
+                                                    <li data-value="Antigua and Barbuda" class="jfDropdown-optionListItem">Antigua and Barbuda</li>
+                                                    <li data-value="Argentina" class="jfDropdown-optionListItem">Argentina</li>
+                                                    <li data-value="Armenia" class="jfDropdown-optionListItem">Armenia</li>
+                                                    <li data-value="Aruba" class="jfDropdown-optionListItem">Aruba</li>
+                                                    <li data-value="Australia" class="jfDropdown-optionListItem">Australia</li>
+                                                    <li data-value="Austria" class="jfDropdown-optionListItem">Austria</li>
+                                                    <li data-value="Azerbaijan" class="jfDropdown-optionListItem">Azerbaijan</li>
+                                                    <li data-value="The Bahamas" class="jfDropdown-optionListItem">The Bahamas</li>
+                                                    <li data-value="Bahrain" class="jfDropdown-optionListItem">Bahrain</li>
+                                                    <li data-value="Bangladesh" class="jfDropdown-optionListItem">Bangladesh</li>
+                                                    <li data-value="Barbados" class="jfDropdown-optionListItem">Barbados</li>
+                                                    <li data-value="Belarus" class="jfDropdown-optionListItem">Belarus</li>
+                                                    <li data-value="Belgium" class="jfDropdown-optionListItem">Belgium</li>
+                                                    <li data-value="Belize" class="jfDropdown-optionListItem">Belize</li>
+                                                    <li data-value="Benin" class="jfDropdown-optionListItem">Benin</li>
+                                                    <li data-value="Bermuda" class="jfDropdown-optionListItem">Bermuda</li>
+                                                    <li data-value="Bhutan" class="jfDropdown-optionListItem">Bhutan</li>
+                                                    <li data-value="Bolivia" class="jfDropdown-optionListItem">Bolivia</li>
+                                                    <li data-value="Bosnia and Herzegovina" class="jfDropdown-optionListItem">Bosnia and Herzegovina</li>
+                                                    <li data-value="Botswana" class="jfDropdown-optionListItem">Botswana</li>
+                                                    <li data-value="Brazil" class="jfDropdown-optionListItem">Brazil</li>
+                                                    <li data-value="Brunei" class="jfDropdown-optionListItem">Brunei</li>
+                                                    <li data-value="Bulgaria" class="jfDropdown-optionListItem">Bulgaria</li>
+                                                    <li data-value="Burkina Faso" class="jfDropdown-optionListItem">Burkina Faso</li>
+                                                    <li data-value="Burundi" class="jfDropdown-optionListItem">Burundi</li>
+                                                    <li data-value="Cambodia" class="jfDropdown-optionListItem">Cambodia</li>
+                                                    <li data-value="Cameroon" class="jfDropdown-optionListItem">Cameroon</li>
+                                                    <li data-value="Canada" class="jfDropdown-optionListItem">Canada</li>
+                                                    <li data-value="Cape Verde" class="jfDropdown-optionListItem">Cape Verde</li>
+                                                    <li data-value="Cayman Islands" class="jfDropdown-optionListItem">Cayman Islands</li>
+                                                    <li data-value="Central African Republic" class="jfDropdown-optionListItem">Central African Republic</li>
+                                                    <li data-value="Chad" class="jfDropdown-optionListItem">Chad</li>
+                                                    <li data-value="Chile" class="jfDropdown-optionListItem">Chile</li>
+                                                    <li data-value="China" class="jfDropdown-optionListItem">China</li>
+                                                    <li data-value="Christmas Island" class="jfDropdown-optionListItem">Christmas Island</li>
+                                                    <li data-value="Cocos (Keeling) Islands" class="jfDropdown-optionListItem">Cocos (Keeling) Islands</li>
+                                                    <li data-value="Colombia" class="jfDropdown-optionListItem">Colombia</li>
+                                                    <li data-value="Comoros" class="jfDropdown-optionListItem">Comoros</li>
+                                                    <li data-value="Congo" class="jfDropdown-optionListItem">Congo</li>
+                                                    <li data-value="Cook Islands" class="jfDropdown-optionListItem">Cook Islands</li>
+                                                    <li data-value="Costa Rica" class="jfDropdown-optionListItem">Costa Rica</li>
+                                                    <li data-value="Cote d&#x27;Ivoire" class="jfDropdown-optionListItem">Cote d&#x27;Ivoire</li>
+                                                    <li data-value="Croatia" class="jfDropdown-optionListItem">Croatia</li>
+                                                    <li data-value="Cuba" class="jfDropdown-optionListItem">Cuba</li>
+                                                    <li data-value="Cyprus" class="jfDropdown-optionListItem">Cyprus</li>
+                                                    <li data-value="Czech Republic" class="jfDropdown-optionListItem">Czech Republic</li>
+                                                    <li data-value="Democratic Republic of the Congo" class="jfDropdown-optionListItem">Democratic Republic of the Congo</li>
+                                                    <li data-value="Denmark" class="jfDropdown-optionListItem">Denmark</li>
+                                                    <li data-value="Djibouti" class="jfDropdown-optionListItem">Djibouti</li>
+                                                    <li data-value="Dominica" class="jfDropdown-optionListItem">Dominica</li>
+                                                    <li data-value="Dominican Republic" class="jfDropdown-optionListItem">Dominican Republic</li>
+                                                    <li data-value="Ecuador" class="jfDropdown-optionListItem">Ecuador</li>
+                                                    <li data-value="Egypt" class="jfDropdown-optionListItem">Egypt</li>
+                                                    <li data-value="El Salvador" class="jfDropdown-optionListItem">El Salvador</li>
+                                                    <li data-value="Equatorial Guinea" class="jfDropdown-optionListItem">Equatorial Guinea</li>
+                                                    <li data-value="Eritrea" class="jfDropdown-optionListItem">Eritrea</li>
+                                                    <li data-value="Estonia" class="jfDropdown-optionListItem">Estonia</li>
+                                                    <li data-value="Ethiopia" class="jfDropdown-optionListItem">Ethiopia</li>
+                                                    <li data-value="Falkland Islands" class="jfDropdown-optionListItem">Falkland Islands</li>
+                                                    <li data-value="Faroe Islands" class="jfDropdown-optionListItem">Faroe Islands</li>
+                                                    <li data-value="Fiji" class="jfDropdown-optionListItem">Fiji</li>
+                                                    <li data-value="Finland" class="jfDropdown-optionListItem">Finland</li>
+                                                    <li data-value="France" class="jfDropdown-optionListItem">France</li>
+                                                    <li data-value="French Polynesia" class="jfDropdown-optionListItem">French Polynesia</li>
+                                                    <li data-value="Gabon" class="jfDropdown-optionListItem">Gabon</li>
+                                                    <li data-value="The Gambia" class="jfDropdown-optionListItem">The Gambia</li>
+                                                    <li data-value="Georgia" class="jfDropdown-optionListItem">Georgia</li>
+                                                    <li data-value="Germany" class="jfDropdown-optionListItem">Germany</li>
+                                                    <li data-value="Ghana" class="jfDropdown-optionListItem">Ghana</li>
+                                                    <li data-value="Gibraltar" class="jfDropdown-optionListItem">Gibraltar</li>
+                                                    <li data-value="Greece" class="jfDropdown-optionListItem">Greece</li>
+                                                    <li data-value="Greenland" class="jfDropdown-optionListItem">Greenland</li>
+                                                    <li data-value="Grenada" class="jfDropdown-optionListItem">Grenada</li>
+                                                    <li data-value="Guadeloupe" class="jfDropdown-optionListItem">Guadeloupe</li>
+                                                    <li data-value="Guam" class="jfDropdown-optionListItem">Guam</li>
+                                                    <li data-value="Guatemala" class="jfDropdown-optionListItem">Guatemala</li>
+                                                    <li data-value="Guernsey" class="jfDropdown-optionListItem">Guernsey</li>
+                                                    <li data-value="Guinea" class="jfDropdown-optionListItem">Guinea</li>
+                                                    <li data-value="Guinea-Bissau" class="jfDropdown-optionListItem">Guinea-Bissau</li>
+                                                    <li data-value="Guyana" class="jfDropdown-optionListItem">Guyana</li>
+                                                    <li data-value="Haiti" class="jfDropdown-optionListItem">Haiti</li>
+                                                    <li data-value="Honduras" class="jfDropdown-optionListItem">Honduras</li>
+                                                    <li data-value="Hong Kong" class="jfDropdown-optionListItem">Hong Kong</li>
+                                                    <li data-value="Hungary" class="jfDropdown-optionListItem">Hungary</li>
+                                                    <li data-value="Iceland" class="jfDropdown-optionListItem">Iceland</li>
+                                                    <li data-value="India" class="jfDropdown-optionListItem">India</li>
+                                                    <li data-value="Indonesia" class="jfDropdown-optionListItem">Indonesia</li>
+                                                    <li data-value="Iran" class="jfDropdown-optionListItem">Iran</li>
+                                                    <li data-value="Iraq" class="jfDropdown-optionListItem">Iraq</li>
+                                                    <li data-value="Ireland" class="jfDropdown-optionListItem">Ireland</li>
+                                                    <li data-value="Israel" class="jfDropdown-optionListItem">Israel</li>
+                                                    <li data-value="Italy" class="jfDropdown-optionListItem">Italy</li>
+                                                    <li data-value="Jamaica" class="jfDropdown-optionListItem">Jamaica</li>
+                                                    <li data-value="Japan" class="jfDropdown-optionListItem">Japan</li>
+                                                    <li data-value="Jersey" class="jfDropdown-optionListItem">Jersey</li>
+                                                    <li data-value="Jordan" class="jfDropdown-optionListItem">Jordan</li>
+                                                    <li data-value="Kazakhstan" class="jfDropdown-optionListItem">Kazakhstan</li>
+                                                    <li data-value="Kenya" class="jfDropdown-optionListItem">Kenya</li>
+                                                    <li data-value="Kiribati" class="jfDropdown-optionListItem">Kiribati</li>
+                                                    <li data-value="North Korea" class="jfDropdown-optionListItem">North Korea</li>
+                                                    <li data-value="South Korea" class="jfDropdown-optionListItem">South Korea</li>
+                                                    <li data-value="Kosovo" class="jfDropdown-optionListItem">Kosovo</li>
+                                                    <li data-value="Kuwait" class="jfDropdown-optionListItem">Kuwait</li>
+                                                    <li data-value="Kyrgyzstan" class="jfDropdown-optionListItem">Kyrgyzstan</li>
+                                                    <li data-value="Laos" class="jfDropdown-optionListItem">Laos</li>
+                                                    <li data-value="Latvia" class="jfDropdown-optionListItem">Latvia</li>
+                                                    <li data-value="Lebanon" class="jfDropdown-optionListItem">Lebanon</li>
+                                                    <li data-value="Lesotho" class="jfDropdown-optionListItem">Lesotho</li>
+                                                    <li data-value="Liberia" class="jfDropdown-optionListItem">Liberia</li>
+                                                    <li data-value="Libya" class="jfDropdown-optionListItem">Libya</li>
+                                                    <li data-value="Liechtenstein" class="jfDropdown-optionListItem">Liechtenstein</li>
+                                                    <li data-value="Lithuania" class="jfDropdown-optionListItem">Lithuania</li>
+                                                    <li data-value="Luxembourg" class="jfDropdown-optionListItem">Luxembourg</li>
+                                                    <li data-value="Macau" class="jfDropdown-optionListItem">Macau</li>
+                                                    <li data-value="Macedonia" class="jfDropdown-optionListItem">Macedonia</li>
+                                                    <li data-value="Madagascar" class="jfDropdown-optionListItem">Madagascar</li>
+                                                    <li data-value="Malawi" class="jfDropdown-optionListItem">Malawi</li>
+                                                    <li data-value="Malaysia" class="jfDropdown-optionListItem">Malaysia</li>
+                                                    <li data-value="Maldives" class="jfDropdown-optionListItem">Maldives</li>
+                                                    <li data-value="Mali" class="jfDropdown-optionListItem">Mali</li>
+                                                    <li data-value="Malta" class="jfDropdown-optionListItem">Malta</li>
+                                                    <li data-value="Marshall Islands" class="jfDropdown-optionListItem">Marshall Islands</li>
+                                                    <li data-value="Martinique" class="jfDropdown-optionListItem">Martinique</li>
+                                                    <li data-value="Mauritania" class="jfDropdown-optionListItem">Mauritania</li>
+                                                    <li data-value="Mauritius" class="jfDropdown-optionListItem">Mauritius</li>
+                                                    <li data-value="Mayotte" class="jfDropdown-optionListItem">Mayotte</li>
+                                                    <li data-value="Mexico" class="jfDropdown-optionListItem">Mexico</li>
+                                                    <li data-value="Micronesia" class="jfDropdown-optionListItem">Micronesia</li>
+                                                    <li data-value="Moldova" class="jfDropdown-optionListItem">Moldova</li>
+                                                    <li data-value="Monaco" class="jfDropdown-optionListItem">Monaco</li>
+                                                    <li data-value="Mongolia" class="jfDropdown-optionListItem">Mongolia</li>
+                                                    <li data-value="Montenegro" class="jfDropdown-optionListItem">Montenegro</li>
+                                                    <li data-value="Montserrat" class="jfDropdown-optionListItem">Montserrat</li>
+                                                    <li data-value="Morocco" class="jfDropdown-optionListItem">Morocco</li>
+                                                    <li data-value="Mozambique" class="jfDropdown-optionListItem">Mozambique</li>
+                                                    <li data-value="Myanmar" class="jfDropdown-optionListItem">Myanmar</li>
+                                                    <li data-value="Nagorno-Karabakh" class="jfDropdown-optionListItem">Nagorno-Karabakh</li>
+                                                    <li data-value="Namibia" class="jfDropdown-optionListItem">Namibia</li>
+                                                    <li data-value="Nauru" class="jfDropdown-optionListItem">Nauru</li>
+                                                    <li data-value="Nepal" class="jfDropdown-optionListItem">Nepal</li>
+                                                    <li data-value="Netherlands" class="jfDropdown-optionListItem">Netherlands</li>
+                                                    <li data-value="Netherlands Antilles" class="jfDropdown-optionListItem">Netherlands Antilles</li>
+                                                    <li data-value="New Caledonia" class="jfDropdown-optionListItem">New Caledonia</li>
+                                                    <li data-value="New Zealand" class="jfDropdown-optionListItem">New Zealand</li>
+                                                    <li data-value="Nicaragua" class="jfDropdown-optionListItem">Nicaragua</li>
+                                                    <li data-value="Niger" class="jfDropdown-optionListItem">Niger</li>
+                                                    <li data-value="Nigeria" class="jfDropdown-optionListItem">Nigeria</li>
+                                                    <li data-value="Niue" class="jfDropdown-optionListItem">Niue</li>
+                                                    <li data-value="Norfolk Island" class="jfDropdown-optionListItem">Norfolk Island</li>
+                                                    <li data-value="Turkish Republic of Northern Cyprus" class="jfDropdown-optionListItem">Turkish Republic of Northern Cyprus</li>
+                                                    <li data-value="Northern Mariana" class="jfDropdown-optionListItem">Northern Mariana</li>
+                                                    <li data-value="Norway" class="jfDropdown-optionListItem">Norway</li>
+                                                    <li data-value="Oman" class="jfDropdown-optionListItem">Oman</li>
+                                                    <li data-value="Pakistan" class="jfDropdown-optionListItem">Pakistan</li>
+                                                    <li data-value="Palau" class="jfDropdown-optionListItem">Palau</li>
+                                                    <li data-value="Palestine" class="jfDropdown-optionListItem">Palestine</li>
+                                                    <li data-value="Panama" class="jfDropdown-optionListItem">Panama</li>
+                                                    <li data-value="Papua New Guinea" class="jfDropdown-optionListItem">Papua New Guinea</li>
+                                                    <li data-value="Paraguay" class="jfDropdown-optionListItem">Paraguay</li>
+                                                    <li data-value="Peru" class="jfDropdown-optionListItem">Peru</li>
+                                                    <li data-value="Philippines" class="jfDropdown-optionListItem">Philippines</li>
+                                                    <li data-value="Pitcairn Islands" class="jfDropdown-optionListItem">Pitcairn Islands</li>
+                                                    <li data-value="Poland" class="jfDropdown-optionListItem">Poland</li>
+                                                    <li data-value="Portugal" class="jfDropdown-optionListItem">Portugal</li>
+                                                    <li data-value="Puerto Rico" class="jfDropdown-optionListItem">Puerto Rico</li>
+                                                    <li data-value="Qatar" class="jfDropdown-optionListItem">Qatar</li>
+                                                    <li data-value="Republic of the Congo" class="jfDropdown-optionListItem">Republic of the Congo</li>
+                                                    <li data-value="Romania" class="jfDropdown-optionListItem">Romania</li>
+                                                    <li data-value="Russia" class="jfDropdown-optionListItem">Russia</li>
+                                                    <li data-value="Rwanda" class="jfDropdown-optionListItem">Rwanda</li>
+                                                    <li data-value="Saint Barthelemy" class="jfDropdown-optionListItem">Saint Barthelemy</li>
+                                                    <li data-value="Saint Helena" class="jfDropdown-optionListItem">Saint Helena</li>
+                                                    <li data-value="Saint Kitts and Nevis" class="jfDropdown-optionListItem">Saint Kitts and Nevis</li>
+                                                    <li data-value="Saint Lucia" class="jfDropdown-optionListItem">Saint Lucia</li>
+                                                    <li data-value="Saint Martin" class="jfDropdown-optionListItem">Saint Martin</li>
+                                                    <li data-value="Saint Pierre and Miquelon" class="jfDropdown-optionListItem">Saint Pierre and Miquelon</li>
+                                                    <li data-value="Saint Vincent and the Grenadines" class="jfDropdown-optionListItem">Saint Vincent and the Grenadines</li>
+                                                    <li data-value="Samoa" class="jfDropdown-optionListItem">Samoa</li>
+                                                    <li data-value="San Marino" class="jfDropdown-optionListItem">San Marino</li>
+                                                    <li data-value="Sao Tome and Principe" class="jfDropdown-optionListItem">Sao Tome and Principe</li>
+                                                    <li data-value="Saudi Arabia" class="jfDropdown-optionListItem">Saudi Arabia</li>
+                                                    <li data-value="Senegal" class="jfDropdown-optionListItem">Senegal</li>
+                                                    <li data-value="Serbia" class="jfDropdown-optionListItem">Serbia</li>
+                                                    <li data-value="Seychelles" class="jfDropdown-optionListItem">Seychelles</li>
+                                                    <li data-value="Sierra Leone" class="jfDropdown-optionListItem">Sierra Leone</li>
+                                                    <li data-value="Singapore" class="jfDropdown-optionListItem">Singapore</li>
+                                                    <li data-value="Slovakia" class="jfDropdown-optionListItem">Slovakia</li>
+                                                    <li data-value="Slovenia" class="jfDropdown-optionListItem">Slovenia</li>
+                                                    <li data-value="Solomon Islands" class="jfDropdown-optionListItem">Solomon Islands</li>
+                                                    <li data-value="Somalia" class="jfDropdown-optionListItem">Somalia</li>
+                                                    <li data-value="Somaliland" class="jfDropdown-optionListItem">Somaliland</li>
+                                                    <li data-value="South Africa" class="jfDropdown-optionListItem">South Africa</li>
+                                                    <li data-value="South Ossetia" class="jfDropdown-optionListItem">South Ossetia</li>
+                                                    <li data-value="South Sudan" class="jfDropdown-optionListItem">South Sudan</li>
+                                                    <li data-value="Spain" class="jfDropdown-optionListItem">Spain</li>
+                                                    <li data-value="Sri Lanka" class="jfDropdown-optionListItem">Sri Lanka</li>
+                                                    <li data-value="Sudan" class="jfDropdown-optionListItem">Sudan</li>
+                                                    <li data-value="Suriname" class="jfDropdown-optionListItem">Suriname</li>
+                                                    <li data-value="Svalbard" class="jfDropdown-optionListItem">Svalbard</li>
+                                                    <li data-value="Swaziland" class="jfDropdown-optionListItem">Swaziland</li>
+                                                    <li data-value="Sweden" class="jfDropdown-optionListItem">Sweden</li>
+                                                    <li data-value="Switzerland" class="jfDropdown-optionListItem">Switzerland</li>
+                                                    <li data-value="Syria" class="jfDropdown-optionListItem">Syria</li>
+                                                    <li data-value="Taiwan" class="jfDropdown-optionListItem">Taiwan</li>
+                                                    <li data-value="Tajikistan" class="jfDropdown-optionListItem">Tajikistan</li>
+                                                    <li data-value="Tanzania" class="jfDropdown-optionListItem">Tanzania</li>
+                                                    <li data-value="Thailand" class="jfDropdown-optionListItem">Thailand</li>
+                                                    <li data-value="Timor-Leste" class="jfDropdown-optionListItem">Timor-Leste</li>
+                                                    <li data-value="Togo" class="jfDropdown-optionListItem">Togo</li>
+                                                    <li data-value="Tokelau" class="jfDropdown-optionListItem">Tokelau</li>
+                                                    <li data-value="Tonga" class="jfDropdown-optionListItem">Tonga</li>
+                                                    <li data-value="Transnistria Pridnestrovie" class="jfDropdown-optionListItem">Transnistria Pridnestrovie</li>
+                                                    <li data-value="Trinidad and Tobago" class="jfDropdown-optionListItem">Trinidad and Tobago</li>
+                                                    <li data-value="Tristan da Cunha" class="jfDropdown-optionListItem">Tristan da Cunha</li>
+                                                    <li data-value="Tunisia" class="jfDropdown-optionListItem">Tunisia</li>
+                                                    <li data-value="Turkey" class="jfDropdown-optionListItem">Turkey</li>
+                                                    <li data-value="Turkmenistan" class="jfDropdown-optionListItem">Turkmenistan</li>
+                                                    <li data-value="Turks and Caicos Islands" class="jfDropdown-optionListItem">Turks and Caicos Islands</li>
+                                                    <li data-value="Tuvalu" class="jfDropdown-optionListItem">Tuvalu</li>
+                                                    <li data-value="Uganda" class="jfDropdown-optionListItem">Uganda</li>
+                                                    <li data-value="Ukraine" class="jfDropdown-optionListItem">Ukraine</li>
+                                                    <li data-value="United Arab Emirates" class="jfDropdown-optionListItem">United Arab Emirates</li>
+                                                    <li data-value="United Kingdom" class="jfDropdown-optionListItem">United Kingdom</li>
+                                                    <li data-value="Uruguay" class="jfDropdown-optionListItem">Uruguay</li>
+                                                    <li data-value="Uzbekistan" class="jfDropdown-optionListItem">Uzbekistan</li>
+                                                    <li data-value="Vanuatu" class="jfDropdown-optionListItem">Vanuatu</li>
+                                                    <li data-value="Vatican City" class="jfDropdown-optionListItem">Vatican City</li>
+                                                    <li data-value="Venezuela" class="jfDropdown-optionListItem">Venezuela</li>
+                                                    <li data-value="Vietnam" class="jfDropdown-optionListItem">Vietnam</li>
+                                                    <li data-value="British Virgin Islands" class="jfDropdown-optionListItem">British Virgin Islands</li>
+                                                    <li data-value="Isle of Man" class="jfDropdown-optionListItem">Isle of Man</li>
+                                                    <li data-value="US Virgin Islands" class="jfDropdown-optionListItem">US Virgin Islands</li>
+                                                    <li data-value="Wallis and Futuna" class="jfDropdown-optionListItem">Wallis and Futuna</li>
+                                                    <li data-value="Western Sahara" class="jfDropdown-optionListItem">Western Sahara</li>
+                                                    <li data-value="Yemen" class="jfDropdown-optionListItem">Yemen</li>
+                                                    <li data-value="Zambia" class="jfDropdown-optionListItem">Zambia</li>
+                                                    <li data-value="Zimbabwe" class="jfDropdown-optionListItem">Zimbabwe</li>
+                                                    <li data-value="other" class="jfDropdown-optionListItem">Other</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="jfField-sublabel" for="input_4_country">Country</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jfCard-actions">
+                                <button type="button" class="jfInput-button forPrev u-left" data-component="button">Previous</button>
+                                <button type="button" class="jfInput-button forNext u-right" data-component="button">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_phone" id="id_5">
+                    <div class="jfCard-wrapper">
+                        <div class="jfCard">
+                            <div class="jfCard-index">4</div>
+                            <div class="jfCard-question">
+                                <label for="input_5_area" class="jfQuestion-label isCenterAlign">Phone Number</label>
+                                <p class="jfQuestion-description" id="input_5_description"></p>
+                                <div class="jfQuestion-fields" data-wrapper-react="true">
+                                    <div class="jfField" data-type="areaCode">
+                                        <input type="tel" id="input_5_area" name="q5_phoneNumber[area]" class="form-textbox forPhone jfInput-input" size="3" value="" data-component="areaCode" aria-required="false" aria-describedby="input_5_area_description" />
+                                        <div class="jfField-sublabel" for="input_5_area">Area Code</div>
+                                    </div>
+                                    <div class="jfField" data-type="phone">
+                                        <input type="tel" id="input_5_phone" name="q5_phoneNumber[phone]" class="form-textbox forPhone jfInput-input" size="8" value="" data-component="phone" aria-required="false" aria-describedby="input_5_phone_description" />
+                                        <div class="jfField-sublabel" for="input_5_phone">Phone Number</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jfCard-actions">
+                                <button type="button" class="jfInput-button forPrev u-left" data-component="button">Previous</button>
+                                <button type="button" class="jfInput-button forNext u-right" data-component="button">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_datetime" id="id_6">
+                    <div class="jfCard-wrapper">
+                        <div class="jfCard">
+                            <div class="jfCard-index">5</div>
+                            <div class="jfCard-question">
+                                <label for="lite_mode_6" class="jfQuestion-label isCenterAlign">Date</label>
+                                <p class="jfQuestion-description" id="input_6_description"></p>
+                                <div class="jfQuestion-fields" data-wrapper-react="true">
+                                    <div style="display:none;">
+                                        <div class="jfField" data-type="month">
+                                            <input type="tel" id="month_6" name="q6_date[month]" class="form-textbox validate[limitDate] jfInput-input" size="2" value="" maxlength="2" data-maxlength="2" data-component="month" aria-required="false" aria-describedby="month_6_description" />
+                                            <div class="jfField-sublabel" for="month_6">Month</div>
+                                        </div>
+                                        <div class="jfField" data-type="day">
+                                            <input type="tel" id="day_6" name="q6_date[day]" class="form-textbox validate[limitDate] jfInput-input" size="2" value="" maxlength="2" data-maxlength="2" data-component="day" aria-required="false" aria-describedby="day_6_description" />
+                                            <div class="jfField-sublabel" for="day_6">Day</div>
+                                        </div>
+                                        <div class="jfField" data-type="year">
+                                            <input type="tel" id="year_6" name="q6_date[year]" class="form-textbox validate[limitDate] jfInput-input" size="4" value="" maxlength="4" data-maxlength="4" data-component="year" aria-required="false" aria-describedby="year_6_description" />
+                                            <div class="jfField-sublabel" for="year_6">Year</div>
+                                        </div>
+                                    </div>
                                     <div class="jfField">
-                                        <select name="q3_whatsYour" data-component="dropdown" id="input_3" class="form-dropdown">
+                                        <input type="text" id="lite_mode_6" class="form-textbox validate[limitDate] jfInput-input" size="12" value="" maxlength="12" data-maxlength="12" data-format="mmddyyyy" data-seperator="-" aria-required="false" aria-describedby="lite_mode_6_description" />
+                                        <div class="jfField-sublabel" for="lite_mode_6"></div>
+                                    </div><img class="showAutoCalendar" alt="Pick a Date" id="input_6_pick" style="display:none;vertical-align:middle;" data-component="datetime" />
+                                    <div class="jfCalendar-wrapper">
+                                        <div id="calendar-container-6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jfCard-actions">
+                                <button type="button" class="jfInput-button forPrev u-left" data-component="button">Previous</button>
+                                <button type="button" class="jfInput-button forNext u-right" data-component="button">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_textbox" id="id_7">
+                    <div class="jfCard-wrapper">
+                        <div class="jfCard">
+                            <div class="jfCard-index">6</div>
+                            <div class="jfCard-question">
+                                <label for="input_7" class="jfQuestion-label isCenterAlign">Short Text Entry</label>
+                                <p class="jfQuestion-description" id="input_7_description"></p>
+                                <div class="jfQuestion-fields">
+                                    <div class="jfField" data-type="textbox">
+                                        <input type="text" id="input_7" name="q7_shortText" data-type="input-textbox" class="form-textbox jfInput-input" size="20" value="" data-component="textbox" aria-required="false" aria-describedby="input_7_description" />
+                                        <div class="jfField-sublabel" for="input_7"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jfCard-actions">
+                                <button type="button" class="jfInput-button forPrev u-left" data-component="button">Previous</button>
+                                <button type="button" class="jfInput-button forNext u-right" data-component="button">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_textarea" id="id_8">
+                    <div class="jfCard-wrapper">
+                        <div class="jfCard">
+                            <div class="jfCard-index">7</div>
+                            <div class="jfCard-question">
+                                <label for="input_8" class="jfQuestion-label isCenterAlign">Long Text Entry</label>
+                                <p class="jfQuestion-description" id="input_8_description"></p>
+                                <div class="jfQuestion-fields">
+                                    <div class="jfField isFilled">
+                                        <textarea id="input_8" name="q8_longText" cols="40" rows="6" data-component="textarea" class="jfInput-textarea form-textarea"></textarea>
+                                        <div class="jfField-sublabel" for="input_8"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jfCard-actions">
+                                <button type="button" class="jfInput-button forPrev u-left" data-component="button">Previous</button>
+                                <button type="button" class="jfInput-button forNext u-right" data-component="button">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_text" id="id_9">
+                    <div class="jfCard-wrapper">
+                        <div class="jfCard">
+                            <div class="jfCard-index">8</div>
+                            <div class="jfCard-question">
+                                <noscript></noscript>
+                                <noscript></noscript>
+                                <div id="text_9" class="form-html" data-component="text">
+                                    <p>Text</p>
+                                </div>
+                            </div>
+                            <div class="jfCard-actions">
+                                <button type="button" class="jfInput-button forPrev u-left" data-component="button">Previous</button>
+                                <button type="button" class="jfInput-button forNext u-right" data-component="button">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_dropdown" id="id_10">
+                    <div class="jfCard-wrapper">
+                        <div class="jfCard">
+                            <div class="jfCard-index">9</div>
+                            <div class="jfCard-question">
+                                <label for="input_10" class="jfQuestion-label isCenterAlign">Dropdown</label>
+                                <p class="jfQuestion-description" id="input_10_description"></p>
+                                <div class="jfQuestion-fields">
+                                    <div class="jfField">
+                                        <select name="q10_dropdown" data-component="dropdown" id="input_10" class="form-dropdown">
                                             <option value=""></option>
-                                            <option value=""></option>
+                                            <option value="asgdadsfgad">asgdadsfgad</option>
+                                            <option value="hs">hs</option>
+                                            <option value="dgh">dgh</option>
+                                            <option value="df">df</option>
+                                            <option value="gh">gh</option>
+                                            <option value="dfg">dfg</option>
+                                            <option value="hdf">hdf</option>
                                         </select>
                                         <div tabindex="0" class="jfInput-dropdown" datatype="multiselect">
                                             <div class="jfDropdown-wrapper" tabindex="-1">
                                                 <div class="jfDropdown-chipContainer"><span class="jfDropdown-chip isSingle"></span></div><span class="jfDropdown-toggle"><i class="fa fa-caret-down"></i></span></div>
                                             <div class="jfDropdown-optionListWrapper">
-                                                <ul name="q3_whatsYour" data-component="dropdown" class="jfDropdown-optionList form-dropdown"></ul>
+                                                <ul name="q10_dropdown" data-component="dropdown" class="jfDropdown-optionList form-dropdown">
+                                                    <li data-value="asgdadsfgad" class="jfDropdown-optionListItem">asgdadsfgad</li>
+                                                    <li data-value="hs" class="jfDropdown-optionListItem">hs</li>
+                                                    <li data-value="dgh" class="jfDropdown-optionListItem">dgh</li>
+                                                    <li data-value="df" class="jfDropdown-optionListItem">df</li>
+                                                    <li data-value="gh" class="jfDropdown-optionListItem">gh</li>
+                                                    <li data-value="dfg" class="jfDropdown-optionListItem">dfg</li>
+                                                    <li data-value="hdf" class="jfDropdown-optionListItem">hdf</li>
+                                                </ul>
                                             </div>
                                         </div>
-                                        <div class="jfField-sublabel" for="input_3"></div>
+                                        <div class="jfField-sublabel" for="input_10"></div>
                                     </div>
                                 </div>
                             </div>
@@ -72,30 +915,30 @@
                         </div>
                     </div>
                 </li>
-                <li class="form-line" data-type="control_radio" id="id_4">
+                <li class="form-line" data-type="control_radio" id="id_11">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
-                            <div class="jfCard-index">3</div>
+                            <div class="jfCard-index">10</div>
                             <div class="jfCard-question">
-                                <label for="input_4" class="jfQuestion-label isCenterAlign">Warum rufst du mich nicht an?</label>
-                                <p class="jfQuestion-description" id="input_4_description"></p>
+                                <label for="input_11" class="jfQuestion-label isCenterAlign">Radioactive</label>
+                                <p class="jfQuestion-description" id="input_11_description"></p>
                                 <div class="jfQuestion-fields form-multiple-column" data-columncount="2" data-component="radio">
                                     <div class="jfField form-radio-item">
                                         <label class="jfRadio withoutImage">
-                                            <input type="radio" class="jfRadio-input form-radio" name="q4_warumRufst" value="asdfa" id="input_4_0" />
-                                            <div class="jfRadio-label"><span class="jfRadio-customInput"><span class="jfRadio-customInputIcon"></span></span><img class="jfRadio-visual" /><span class="jfRadio-labelText">asdfa</span></div>
+                                            <input type="radio" class="jfRadio-input form-radio" name="q11_radioactive" value="Option 1" id="input_11_0" />
+                                            <div class="jfRadio-label"><span class="jfRadio-customInput"><span class="jfRadio-customInputIcon"></span></span><img class="jfRadio-visual" /><span class="jfRadio-labelText">Option 1</span></div>
                                         </label>
                                     </div>
                                     <div class="jfField form-radio-item">
                                         <label class="jfRadio withoutImage">
-                                            <input type="radio" class="jfRadio-input form-radio" name="q4_warumRufst" value="asfgadfghdshsf" id="input_4_1" />
-                                            <div class="jfRadio-label"><span class="jfRadio-customInput"><span class="jfRadio-customInputIcon"></span></span><img class="jfRadio-visual" /><span class="jfRadio-labelText">asfgadfghdshsf</span></div>
+                                            <input type="radio" class="jfRadio-input form-radio" name="q11_radioactive" value="Option 2" id="input_11_1" />
+                                            <div class="jfRadio-label"><span class="jfRadio-customInput"><span class="jfRadio-customInputIcon"></span></span><img class="jfRadio-visual" /><span class="jfRadio-labelText">Option 2</span></div>
                                         </label>
                                     </div>
                                     <div class="jfField form-radio-item">
                                         <label class="jfRadio withoutImage">
-                                            <input type="radio" class="jfRadio-input form-radio" name="q4_warumRufst" value="dfghjfghjfgj" id="input_4_2" />
-                                            <div class="jfRadio-label"><span class="jfRadio-customInput"><span class="jfRadio-customInputIcon"></span></span><img class="jfRadio-visual" /><span class="jfRadio-labelText">dfghjfghjfgj</span></div>
+                                            <input type="radio" class="jfRadio-input form-radio" name="q11_radioactive" value="Option 3" id="input_11_2" />
+                                            <div class="jfRadio-label"><span class="jfRadio-customInput"><span class="jfRadio-customInputIcon"></span></span><img class="jfRadio-visual" /><span class="jfRadio-labelText">Option 3</span></div>
                                         </label>
                                     </div>
                                 </div>
@@ -107,32 +950,86 @@
                         </div>
                     </div>
                 </li>
-                <li class="form-line" data-type="control_checkbox" id="id_5">
+                <li class="form-line" data-type="control_checkbox" id="id_12">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
-                            <div class="jfCard-index">4</div>
+                            <div class="jfCard-index">11</div>
                             <div class="jfCard-question">
-                                <label for="input_5_0" class="jfQuestion-label isCenterAlign">How do you turn this on?</label>
-                                <p class="jfQuestion-description" id="input_5_description"></p>
+                                <label for="input_12_0" class="jfQuestion-label isCenterAlign">Checkboxes</label>
+                                <p class="jfQuestion-description" id="input_12_description"></p>
                                 <div class="jfQuestion-fields form-multiple-column" data-columncount="2" data-component="checkbox">
                                     <div class="jfField form-checkbox-item">
                                         <label class="jfCheckbox withoutImage">
-                                            <input type="checkbox" class="jfCheckbox-input form-checkbox" name="q5_howDo[]" value="qewerqqwrqt" id="input_5_0" />
-                                            <div class="jfCheckbox-label"><span class="jfCheckbox-customInput"><span class="jfCheckbox-customInputIcon"></span></span><img class="jfCheckbox-visual" /><span class="jfCheckbox-labelText">qewerqqwrqt</span></div>
+                                            <input type="checkbox" class="jfCheckbox-input form-checkbox" name="q12_checkboxes[]" value="Option 1" id="input_12_0" />
+                                            <div class="jfCheckbox-label"><span class="jfCheckbox-customInput"><span class="jfCheckbox-customInputIcon"></span></span><img class="jfCheckbox-visual" /><span class="jfCheckbox-labelText">Option 1</span></div>
                                         </label>
                                     </div>
                                     <div class="jfField form-checkbox-item">
                                         <label class="jfCheckbox withoutImage">
-                                            <input type="checkbox" class="jfCheckbox-input form-checkbox" name="q5_howDo[]" value="xczvzxcvz" id="input_5_1" />
-                                            <div class="jfCheckbox-label"><span class="jfCheckbox-customInput"><span class="jfCheckbox-customInputIcon"></span></span><img class="jfCheckbox-visual" /><span class="jfCheckbox-labelText">xczvzxcvz</span></div>
+                                            <input type="checkbox" class="jfCheckbox-input form-checkbox" name="q12_checkboxes[]" value="Option 2" id="input_12_1" />
+                                            <div class="jfCheckbox-label"><span class="jfCheckbox-customInput"><span class="jfCheckbox-customInputIcon"></span></span><img class="jfCheckbox-visual" /><span class="jfCheckbox-labelText">Option 2</span></div>
                                         </label>
                                     </div>
                                     <div class="jfField form-checkbox-item">
                                         <label class="jfCheckbox withoutImage">
-                                            <input type="checkbox" class="jfCheckbox-input form-checkbox" name="q5_howDo[]" value="vbmnmvb" id="input_5_2" />
-                                            <div class="jfCheckbox-label"><span class="jfCheckbox-customInput"><span class="jfCheckbox-customInputIcon"></span></span><img class="jfCheckbox-visual" /><span class="jfCheckbox-labelText">vbmnmvb</span></div>
+                                            <input type="checkbox" class="jfCheckbox-input form-checkbox" name="q12_checkboxes[]" value="Option 3" id="input_12_2" />
+                                            <div class="jfCheckbox-label"><span class="jfCheckbox-customInput"><span class="jfCheckbox-customInputIcon"></span></span><img class="jfCheckbox-visual" /><span class="jfCheckbox-labelText">Option 3</span></div>
                                         </label>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="jfCard-actions">
+                                <button type="button" class="jfInput-button forPrev u-left" data-component="button">Previous</button>
+                                <button type="button" class="jfInput-button forNext u-right" data-component="button">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_number" id="id_13">
+                    <div class="jfCard-wrapper">
+                        <div class="jfCard">
+                            <div class="jfCard-index">12</div>
+                            <div class="jfCard-question">
+                                <label for="input_13" class="jfQuestion-label isCenterAlign">Number</label>
+                                <p class="jfQuestion-description" id="input_13_description"></p>
+                                <div class="jfQuestion-fields">
+                                    <div class="jfField" data-type="number">
+                                        <input type="number" id="input_13" name="q13_number" data-type="input-number" class=" form-number-input form-textbox forNumber jfInput-input" size="5" value="" placeholder="ex: 23" data-component="number" aria-required="false" aria-describedby="input_13_description" />
+                                        <div class="jfField-sublabel" for="input_13"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jfCard-actions">
+                                <button type="button" class="jfInput-button forPrev u-left" data-component="button">Previous</button>
+                                <button type="button" class="jfInput-button forNext u-right" data-component="button">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_image" id="id_14">
+                    <div class="jfCard-wrapper">
+                        <div class="jfCard">
+                            <div class="jfCard-index">13</div>
+                            <div class="jfCard-question">
+                                <noscript></noscript>
+                                <noscript></noscript><img alt="" class="form-image" style="border:0px;" src="https://www.jotform.com/uploads/csvital/form_files/True Mirror.622.jpg" height="235" width="309" data-component="image" /></div>
+                            <div class="jfCard-actions">
+                                <button type="button" class="jfInput-button forPrev u-left" data-component="button">Previous</button>
+                                <button type="button" class="jfInput-button forNext u-right" data-component="button">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_fileupload" id="id_15">
+                    <div class="jfCard-wrapper">
+                        <div class="jfCard">
+                            <div class="jfCard-index">14</div>
+                            <div class="jfCard-question">
+                                <label for="input_15" class="jfQuestion-label isCenterAlign">Upload</label>
+                                <p class="jfQuestion-description" id="input_15_description"></p>
+                                <div class="jfField">
+                                    <input type="file" id="input_15" name="q15_upload" class="form-upload" data-imagevalidate="yes" data-file-accept="pdf, doc, docx, xls, xlsx, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" data-file-maxsize="1024" data-file-minsize="0" data-file-limit="0" data-component="fileupload" />
+                                    <div data-wrapper-react="true"></div>
                                 </div>
                             </div>
                             <div class="jfCard-actions">
@@ -153,24 +1050,169 @@
         <div class="jfProgress-itemWrapper">
             <div class="jfProgress-itemCell">
                 <div class="jfProgress-item" data-index="0">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">E-mail</span></div>
+                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Name</span></div>
             </div>
             <div class="jfProgress-itemCell">
                 <div class="jfProgress-item" data-index="1">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">What&amp;#039;s your purpose of visit?</span></div>
+                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">E-mail</span></div>
             </div>
             <div class="jfProgress-itemCell">
                 <div class="jfProgress-item" data-index="2">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Warum rufst du mich nicht an?</span></div>
+                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Address</span></div>
             </div>
             <div class="jfProgress-itemCell">
                 <div class="jfProgress-item" data-index="3">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">How do you turn this on?</span></div>
+                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Phone Number</span></div>
+            </div>
+            <div class="jfProgress-itemCell">
+                <div class="jfProgress-item" data-index="4">
+                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Date</span></div>
+            </div>
+            <div class="jfProgress-itemCell">
+                <div class="jfProgress-item" data-index="5">
+                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Short Text Entry</span></div>
+            </div>
+            <div class="jfProgress-itemCell">
+                <div class="jfProgress-item" data-index="6">
+                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Long Text Entry</span></div>
+            </div>
+            <div class="jfProgress-itemCell">
+                <div class="jfProgress-item" data-index="7">
+                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">&lt;p&gt;Text&lt;/p&gt;</span></div>
+            </div>
+            <div class="jfProgress-itemCell">
+                <div class="jfProgress-item" data-index="8">
+                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Dropdown</span></div>
+            </div>
+            <div class="jfProgress-itemCell">
+                <div class="jfProgress-item" data-index="9">
+                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Radioactive</span></div>
+            </div>
+            <div class="jfProgress-itemCell">
+                <div class="jfProgress-item" data-index="10">
+                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Checkboxes</span></div>
+            </div>
+            <div class="jfProgress-itemCell">
+                <div class="jfProgress-item" data-index="11">
+                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Number</span></div>
+            </div>
+            <div class="jfProgress-itemCell">
+                <div class="jfProgress-item" data-index="12">
+                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">True Mirror.622</span></div>
+            </div>
+            <div class="jfProgress-itemCell">
+                <div class="jfProgress-item" data-index="13">
+                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Upload</span></div>
             </div>
         </div>
-        <div class="jfProgress-info"><span class="jfProgress-infoContent" id="cardProgressToggle"><span class="iconSvg overview"><i class="svg-icon" name="overview"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.1 21.6" style="enable-background:new 0 0 21.1 21.6;" xml:space="preserve"> <g> <path d="M20.1,11.5c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,11.4,20.3,11.5,20.1,11.5z"/> </g> <g> <path d="M20.1,21.1c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,21,20.3,21.1,20.1,21.1z"/> </g> </svg></i></span><span class="jfProgress-infoContentText"><span class="cardProgress-currentIndex" id="cardProgress-currentIndex">1 </span><span class="cardProgress-questionCount" id="cardProgress-questionCount"> of 4</span><span class="cardProgress-seeAll">See All</span><span class="cardProgress-goBack">Go Back</span></span><span class="iconSvg overview"><i class="svg-icon" name="overview"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.1 21.6" style="enable-background:new 0 0 21.1 21.6;" xml:space="preserve"> <g> <path d="M20.1,11.5c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,11.4,20.3,11.5,20.1,11.5z"/> </g> <g> <path d="M20.1,21.1c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,21,20.3,21.1,20.1,21.1z"/> </g> </svg></i></span></span>
+        <div class="jfProgress-info"><span class="jfProgress-infoContent" id="cardProgressToggle"><span class="iconSvg overview"><i class="svg-icon" name="overview"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.1 21.6" style="enable-background:new 0 0 21.1 21.6;" xml:space="preserve"> <g> <path d="M20.1,11.5c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,11.4,20.3,11.5,20.1,11.5z"/> </g> <g> <path d="M20.1,21.1c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,21,20.3,21.1,20.1,21.1z"/> </g> </svg></i></span><span class="jfProgress-infoContentText"><span class="cardProgress-currentIndex" id="cardProgress-currentIndex">1 </span><span class="cardProgress-questionCount" id="cardProgress-questionCount"> of 14</span><span class="cardProgress-seeAll">See All</span><span class="cardProgress-goBack">Go Back</span></span><span class="iconSvg overview"><i class="svg-icon" name="overview"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.1 21.6" style="enable-background:new 0 0 21.1 21.6;" xml:space="preserve"> <g> <path d="M20.1,11.5c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,11.4,20.3,11.5,20.1,11.5z"/> </g> <g> <path d="M20.1,21.1c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,21,20.3,21.1,20.1,21.1z"/> </g> </svg></i></span></span>
         </div>
     </div>
     <input type="hidden" id="simple_spc" name="simple_spc" value="&quot;71924160223953-71924160223953&quot;" />
-    <div>
-        <script src="https://cdn.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://cdn.jotfor.ms/cardforms/layout.js"></script>
+    <script>
+    window.CardForm = new CardLayout({
+        "questionCount": 14,
+        "formMode": "form",
+        "questions": [{
+            "qid": "input_2",
+            "id": "2",
+            "isHidden": false,
+            "type": "control_fullname"
+        }, {
+            "qid": "input_3",
+            "id": "3",
+            "isHidden": false,
+            "type": "control_email"
+        }, {
+            "qid": "input_4",
+            "id": "4",
+            "isHidden": false,
+            "type": "control_address"
+        }, {
+            "qid": "input_5",
+            "id": "5",
+            "isHidden": false,
+            "type": "control_phone"
+        }, {
+            "qid": "input_6",
+            "id": "6",
+            "isHidden": false,
+            "type": "control_datetime"
+        }, {
+            "qid": "input_7",
+            "id": "7",
+            "isHidden": false,
+            "type": "control_textbox"
+        }, {
+            "qid": "input_8",
+            "id": "8",
+            "isHidden": false,
+            "type": "control_textarea"
+        }, {
+            "qid": "input_9",
+            "id": "9",
+            "isHidden": false,
+            "type": "control_text"
+        }, {
+            "qid": "input_10",
+            "id": "10",
+            "isHidden": false,
+            "type": "control_dropdown"
+        }, {
+            "qid": "input_11",
+            "id": "11",
+            "isHidden": false,
+            "type": "control_radio"
+        }, {
+            "qid": "input_12",
+            "id": "12",
+            "isHidden": false,
+            "type": "control_checkbox"
+        }, {
+            "qid": "input_13",
+            "id": "13",
+            "isHidden": false,
+            "type": "control_number"
+        }, {
+            "qid": "input_14",
+            "id": "14",
+            "isHidden": false,
+            "type": "control_image"
+        }, {
+            "qid": "input_15",
+            "id": "15",
+            "isHidden": false,
+            "type": "control_fileupload"
+        }]
+    });
+    </script>
+    <script>
+    JotForm.calendarMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    JotForm.calendarDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    JotForm.calendarOther = {
+        "today": "Today"
+    };
+    JotForm.setCalendar("6", false, {
+        "days": {
+            "monday": true,
+            "tuesday": true,
+            "wednesday": true,
+            "thursday": true,
+            "friday": true,
+            "saturday": true,
+            "sunday": true
+        },
+        "future": true,
+        "past": true,
+        "custom": false,
+        "ranges": false,
+        "start": "",
+        "end": ""
+    }, "calendar-container-6");
+    </script>
+    <script src="https://populatedrop.jotform.io/uxAnalytics/uxanalytics.js" type="text/javascript"></script> 
+</body>
+
+</html>

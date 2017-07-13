@@ -32,6 +32,7 @@ class SubField {
 		this.interactionCount = 0;
 		this.events = [];
 		this.fieldfullTime = 0;
+		this.characterCounter = -1;
 	}
 	get fullTime() {
         return this.calcFullTime();
@@ -66,6 +67,7 @@ function textTimeCalculator(flag){
 // question field detailed reader and executioner
 var cardList = [];
 var cardOrder = 0;
+var sessionStartTime;
 function cardReader(jfQLi){ // jfQLi > jotform Question li object
 	var fieldOrder = 0;
 	// li element's control type
@@ -73,17 +75,29 @@ function cardReader(jfQLi){ // jfQLi > jotform Question li object
 	var type = jfQLi.getAttribute('data-type').split('control_');
 	// for find question text's length
 	var questionLabel = jfQLi.querySelector(".jfQuestion-label");
-
+	
+	// console.log('questionLabel', questionLabel);
+	
 	// create card array
 	cardList.push(new Card(cardOrder,
 						   jfQLi.id,
 						   jfQLi.getAttribute('data-type'),
 						   control_type.length > 1 ? type[1] : control_type,
-						   questionLabel.innerHTML.length)
+						   questionLabel != null ? (questionLabel.innerHTML != null ? questionLabel.innerHTML.length : 0) : 0)
+						   // questionLabel.innerHTML != null ? questionLabel.innerHTML.length : 0)
 						);
 
 	// input field analysis
 	var inputs = jfQLi.getElementsByTagName('input');
+	// console.log('inputs', inputs);
+
+	// PATCH for textarea, dropdown, static text and images
+	if (inputs.length == 0) {
+		console.log('hop');
+		console.log('jfQLi', jfQLi);
+		console.log('jfQLi.getElementsByTagName("textarea")', jfQLi.getElementsByTagName('textarea'));
+		inputs = jfQLi.getElementsByTagName('textarea');
+	}
 	
 	// this block counts time for 
 	// text fields focus and blur events
@@ -146,9 +160,24 @@ function cardTimerStart(){
 }
 function cardOnChange(newIndex){
 
+	var prevIndex = navigateHistory[navigateHistory.length-2];
+	console.log('prev index ', prevIndex);
+
+	console.log('cardList[prevIndex]', cardList[prevIndex]);
+	for (var i = 0; i < cardList[prevIndex].fields.length; i++) {
+		console.log('cardList[prevIndex].fields[i].id', cardList[prevIndex].fields[i].id);
+
+		if (cardList[prevIndex].fields[i].id != -1) {
+			var temp = document.querySelector('#'+cardList[prevIndex].fields[i].id);
+			console.log('temp', temp.value.length);
+			cardList[prevIndex].fields[i].characterCounter = temp.value.length;
+		}
+	}
+
 
 	cardEndTime = new Date();
 	elapsedTime = cardEndTime - cardStartTime;
+	
 	// add time record to relevant card object
 	for (var i = 0; i < cardList.length; i++) {
 		if(cardList[i].order == timerIndex){
@@ -166,6 +195,10 @@ function cardOnChange(newIndex){
 // submit aninda calisir, toplam sureleri hesaplar 
 // JSON yapar gonderir, helal olsundur.
 function writeResult(){
+	var sessionElapsedTime = new Date() - sessionStartTime;
+	console.log('sessionElapsedTime', sessionElapsedTime);
+	generalInformation.totalSessionTime = sessionElapsedTime / 1000;
+
 	cardOnChange(-1); // change on card (-1 exit)
 	for (var i = 0; i < cardList.length; i++) {
 		cardList[i].fullTime;
@@ -177,7 +210,9 @@ function writeResult(){
    				cardList[i].fields[j].interactionCount /= 2;
    	   	}
     }
+
 	//console.log(cardList);
+	cardList.unshift(generalInformation);
 	var result = JSON.stringify(cardList);
 
 	function download(text, name, type) {
@@ -187,12 +222,26 @@ function writeResult(){
 	    a.download = name;
 	    a.click();
 	}
-	// download(result, 'hfgsdfg.txt', 'text/plain');	
+	download(result, 'result.txt', 'text/plain');	
 }
 
+var navigateHistory = [];
+var generalInformation;
 // Initialize the widget only select question fields and 
 // pass them to reader
 function init () {
+	
+	sessionStartTime = new Date();
+	console.log('sessionStartTime', sessionStartTime);
+
+	console.log('navigator.userAgent', navigator.userAgent);
+	console.log('window.resolution : ', screen.width + 'x' + screen.height);
+	generalInformation = {
+		userAgentString : navigator.userAgent,
+		resolution : screen.width + 'x' + screen.height,
+		totalSessionTime : 0
+	}
+
 	var jfQuestionLi = document.getElementsByClassName('form-line');
 	for (var i = 0; i < jfQuestionLi.length; i++) {
 		cardReader(jfQuestionLi[i]);
@@ -201,9 +250,12 @@ function init () {
 	//console.log(cardList);
 	
 	cardTimerStart(0);
+	navigateHistory.push(0);
 
 	var oldFunc = CardForm.setCardIndex;
 	CardForm.setCardIndex = (index) => {
+		console.log('current index', index);
+		navigateHistory.push(index);
  		cardOnChange(index);
   		oldFunc(index);
 	};
@@ -211,7 +263,6 @@ function init () {
 	var forSubmit = document.getElementsByClassName('jotform-form');
 	forSubmit[0].addEventListener('submit', writeResult);
 }
-
 window.onload = init;
 
 // when user leaves the page
