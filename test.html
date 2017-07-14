@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+	<div id="id1">
+		<label>zxcvzxcvz</label>
+        <input id="ididid"/>
+	</div>
+
+    <div id="id2">
+        <label for="asd">sdalkghjas</label>
+        <input id="asd"/>
+    </div>
+
+    <script type="text/javascript">
+    	var elem1 = document.querySelector('#id1');
+    	elem1.addEventListener('click', function(e){
+    		console.log('e', e);
+    		console.log('JSON.stringify(e)', JSON.stringify(e));
+    		console.log('e.target', e.target);
+    		console.log('e.currentTarget', e.currentTarget);
+    	});
+
+    	var elem2 = document.querySelector('#id2');
+    	elem2.addEventListener('click', function(e){
+    		// e.stopPropagation();
+			e.preventDefault();
+			// e.stopImmediatePropagation();
+    		console.log('e', e);
+    		console.log('JSON.stringify(e)', JSON.stringify(e));
+    		console.log('e.target', e.target);
+    		console.log('e.currentTarget', e.currentTarget);
+    	});
+    </script>
+</body>
+
+</html>

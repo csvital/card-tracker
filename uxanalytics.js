@@ -5,6 +5,7 @@ class Card {
 		this.type = type;
 		this.name = name;
 		this.questionLength = questionLength;
+		this.totalClickCount = 0;
 		this.viewThroughTimes = [];
 		this.viewFullTime = 0;
 		this.fields = [];
@@ -93,9 +94,9 @@ function cardReader(jfQLi){ // jfQLi > jotform Question li object
 
 	// PATCH for textarea, dropdown, static text and images
 	if (inputs.length == 0) {
-		console.log('hop');
-		console.log('jfQLi', jfQLi);
-		console.log('jfQLi.getElementsByTagName("textarea")', jfQLi.getElementsByTagName('textarea'));
+		// console.log('hop');
+		// console.log('jfQLi', jfQLi);
+		// console.log('jfQLi.getElementsByTagName("textarea")', jfQLi.getElementsByTagName('textarea'));
 		inputs = jfQLi.getElementsByTagName('textarea');
 	}
 	
@@ -161,15 +162,15 @@ function cardTimerStart(){
 function cardOnChange(newIndex){
 
 	var prevIndex = navigateHistory[navigateHistory.length-2];
-	console.log('prev index ', prevIndex);
+	// console.log('prev index ', prevIndex);
 
-	console.log('cardList[prevIndex]', cardList[prevIndex]);
+	// console.log('cardList[prevIndex]', cardList[prevIndex]);
 	for (var i = 0; i < cardList[prevIndex].fields.length; i++) {
-		console.log('cardList[prevIndex].fields[i].id', cardList[prevIndex].fields[i].id);
+		// console.log('cardList[prevIndex].fields[i].id', cardList[prevIndex].fields[i].id);
 
 		if (cardList[prevIndex].fields[i].id != -1) {
 			var temp = document.querySelector('#'+cardList[prevIndex].fields[i].id);
-			console.log('temp', temp.value.length);
+			// console.log('temp', temp.value.length);
 			cardList[prevIndex].fields[i].characterCounter = temp.value.length;
 		}
 	}
@@ -225,6 +226,8 @@ function writeResult(){
 	download(result, 'result.txt', 'text/plain');	
 }
 
+var labelFlag = false;
+
 var navigateHistory = [];
 var generalInformation;
 // Initialize the widget only select question fields and 
@@ -254,7 +257,7 @@ function init () {
 
 	var oldFunc = CardForm.setCardIndex;
 	CardForm.setCardIndex = (index) => {
-		console.log('current index', index);
+		// console.log('current index', index);
 		navigateHistory.push(index);
  		cardOnChange(index);
   		oldFunc(index);
@@ -262,6 +265,28 @@ function init () {
 
 	var forSubmit = document.getElementsByClassName('jotform-form');
 	forSubmit[0].addEventListener('submit', writeResult);
+
+
+
+	var questionAreas = document.querySelectorAll('.jfCard-question');
+	console.log('questionAreas', questionAreas);
+
+	for (var i = 0; i < questionAreas.length; i++) {
+		questionAreas[i].addEventListener('click', function(evt){
+			console.log('evt', evt);
+			console.log('evt.target', evt.target);
+			console.log('evt.currentTarget', evt.currentTarget);
+			console.log('evt.target.id', evt.target.getAttribute('id'));
+			console.log('evt.currentTarget', evt.currentTarget.querySelector('label').getAttribute('for'));
+			
+			var isLabelExist = evt.currentTarget.querySelector('label') === null ? false : true;
+			console.log('isLabelExist', isLabelExist);
+			if( evt.currentTarget.querySelector('label').getAttribute('for') == evt.target.getAttribute('id') ){
+				console.log('clicked');
+				cardList[navigateHistory[navigateHistory.length-1]].totalClickCount++;
+			}
+		});
+	}
 }
 window.onload = init;
 
