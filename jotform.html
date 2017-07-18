@@ -1,174 +1,56 @@
 <html lang="en">
 
 <head>
-    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms//stylebuilder/71924160223953.css" />
-    <title>error counter</title>
+    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms//stylebuilder/71973524623965.css" />
+    <title>New Error Counter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <div>
-        <script src="https://cdn.jotfor.ms/js/vendor/imageinfo.js?v=3.3.972" type="text/javascript"></script>
-        <script src="https://cdn.jotfor.ms/js/prototype.js?v=3.3.972" type="text/javascript"></script>
-        <script src="https://cdn.jotfor.ms/js/vendor/json2.js?v=3.3.972" type="text/javascript"></script>
-        <script src="https://cdn.jotfor.ms/js/protoplus.js?v=3.3.972" type="text/javascript"></script>
-        <script src="https://cdn.jotfor.ms/js/protoplus-ui-form.js?v=3.3.972" type="text/javascript"></script>
-        <script src="https://cdn.jotfor.ms/js/jotform.js?v=3.3.972" type="text/javascript"></script>
-        <script src="https://cdn.jotfor.ms/js/calendarview.js?v=3.3.972" type="text/javascript"></script>
-        
+        <script src="https://cdn.jotfor.ms/js/vendor/imageinfo.js?v=3.3.1015" type="text/javascript"></script>
+        <script src="https://cdn.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+        <script src="https://cdn.jotfor.ms/static/jotform.forms.js?3.3.1015" type="text/javascript"></script>
         <script type="text/javascript">
-        JotForm.debug = true;
         JotForm.init(function() {
-            JotForm.alterTexts({
-                "alphabetic": "This field can only contain letters",
-                "alphanumeric": "This field can only contain letters and numbers.",
-                "ccDonationMinLimitError": "Minimum amount is {minAmount} {currency}",
-                "ccInvalidCVC": "CVC number is invalid.",
-                "ccInvalidExpireDate": "Expire date is invalid.",
-                "ccInvalidNumber": "Credit Card Number is invalid.",
-                "ccMissingDetails": "Please fill up the Credit Card details.",
-                "ccMissingDonation": "Please enter numeric values for donation amount.",
-                "ccMissingProduct": "Please select at least one product.",
-                "characterLimitError": "Too many Characters.  The limit is",
-                "characterMinLimitError": "Too few characters. The minimum is",
-                "confirmClearForm": "Are you sure you want to clear the form?",
-                "confirmEmail": "E-mail does not match",
-                "currency": "This field can only contain currency values.",
-                "cyrillic": "This field can only contain cyrillic characters",
-                "dateInvalid": "This date is not valid. The date format is {format}",
-                "dateInvalidSeparate": "This date is not valid. Enter a valid {element}.",
-                "dateLimited": "This date is unavailable.",
-                "disallowDecimals": "Please enter a whole number.",
-                "email": "Enter a valid e-mail address",
-                "fillMask": "Field value must fill mask.",
-                "freeEmailError": "Free email accounts are not allowed",
-                "generalError": "There are errors on the form. Please fix them before continuing.",
-                "generalPageError": "There are errors on this page. Please fix them before continuing.",
-                "gradingScoreError": "Score total should only be less than or equal to",
-                "incompleteFields": "There are incomplete required fields. Please complete them.",
-                "inputCarretErrorA": "Input should not be less than the minimum value:",
-                "inputCarretErrorB": "Input should not be greater than the maximum value:",
-                "lessThan": "Your score should be less than or equal to",
-                "maxDigitsError": "The maximum digits allowed is",
-                "maxSelectionsError": "The maximum number of selections allowed is",
-                "minSelectionsError": "The minimum required number of selections is",
-                "multipleFileUploads_emptyError": "{file} is empty, please select files again without it.",
-                "multipleFileUploads_fileLimitError": "Only {fileLimit} file uploads allowed.",
-                "multipleFileUploads_minSizeError": "{file} is too small, minimum file size is {minSizeLimit}.",
-                "multipleFileUploads_onLeave": "The files are being uploaded, if you leave now the upload will be cancelled.",
-                "multipleFileUploads_sizeError": "{file} is too large, maximum file size is {sizeLimit}.",
-                "multipleFileUploads_typeError": "{file} has invalid extension. Only {extensions} are allowed.",
-                "numeric": "This field can only contain numeric values",
-                "pastDatesDisallowed": "Date must not be in the past.",
-                "pleaseWait": "Please wait...",
-                "required": "This field is required.",
-                "requireEveryCell": "Every cell is required.",
-                "requireEveryRow": "Every row is required.",
-                "requireOne": "At least one field required.",
-                "submissionLimit": "Sorry! Only one entry is allowed.  Multiple submissions are disabled for this form.",
-                "uploadExtensions": "You can only upload following files:",
-                "uploadFilesize": "File size cannot be bigger than:",
-                "uploadFilesizemin": "File size cannot be smaller than:",
-                "url": "This field can only contain a valid URL",
-                "wordLimitError": "Too many words. The limit is",
-                "wordMinLimitError": "Too few words.  The minimum is"
-            });
+            JotForm.alterTexts({ "alphabetic": "This field can only contain letters", "alphanumeric": "This field can only contain letters and numbers.", "ccDonationMinLimitError": "Minimum amount is {minAmount} {currency}", "ccInvalidCVC": "CVC number is invalid.", "ccInvalidExpireDate": "Expire date is invalid.", "ccInvalidNumber": "Credit Card Number is invalid.", "ccMissingDetails": "Please fill up the Credit Card details.", "ccMissingDonation": "Please enter numeric values for donation amount.", "ccMissingProduct": "Please select at least one product.", "characterLimitError": "Too many Characters.  The limit is", "characterMinLimitError": "Too few characters. The minimum is", "confirmClearForm": "Are you sure you want to clear the form?", "confirmEmail": "E-mail does not match", "currency": "This field can only contain currency values.", "cyrillic": "This field can only contain cyrillic characters", "dateInvalid": "This date is not valid. The date format is {format}", "dateInvalidSeparate": "This date is not valid. Enter a valid {element}.", "dateLimited": "This date is unavailable.", "disallowDecimals": "Please enter a whole number.", "email": "Enter a valid e-mail address", "fillMask": "Field value must fill mask.", "freeEmailError": "Free email accounts are not allowed", "generalError": "There are errors on the form. Please fix them before continuing.", "generalPageError": "There are errors on this page. Please fix them before continuing.", "gradingScoreError": "Score total should only be less than or equal to", "incompleteFields": "There are incomplete required fields. Please complete them.", "inputCarretErrorA": "Input should not be less than the minimum value:", "inputCarretErrorB": "Input should not be greater than the maximum value:", "lessThan": "Your score should be less than or equal to", "maxDigitsError": "The maximum digits allowed is", "maxSelectionsError": "The maximum number of selections allowed is", "minSelectionsError": "The minimum required number of selections is", "multipleFileUploads_emptyError": "{file} is empty, please select files again without it.", "multipleFileUploads_fileLimitError": "Only {fileLimit} file uploads allowed.", "multipleFileUploads_minSizeError": "{file} is too small, minimum file size is {minSizeLimit}.", "multipleFileUploads_onLeave": "The files are being uploaded, if you leave now the upload will be cancelled.", "multipleFileUploads_sizeError": "{file} is too large, maximum file size is {sizeLimit}.", "multipleFileUploads_typeError": "{file} has invalid extension. Only {extensions} are allowed.", "numeric": "This field can only contain numeric values", "pastDatesDisallowed": "Date must not be in the past.", "pleaseWait": "Please wait...", "required": "This field is required.", "requireEveryCell": "Every cell is required.", "requireEveryRow": "Every row is required.", "requireOne": "At least one field required.", "submissionLimit": "Sorry! Only one entry is allowed.  Multiple submissions are disabled for this form.", "uploadExtensions": "You can only upload following files:", "uploadFilesize": "File size cannot be bigger than:", "uploadFilesizemin": "File size cannot be smaller than:", "url": "This field can only contain a valid URL", "wordLimitError": "Too many words. The limit is", "wordMinLimitError": "Too few words.  The minimum is" });
             JotForm.clearFieldOnHide = "disable";
             JotForm.submitError = "jumpToFirstError";
         });
 
-        JotForm.prepareCalculationsOnTheFly([null, null, {
-            "name": "name",
-            "qid": "2",
-            "text": "Name",
-            "type": "control_fullname"
-        }, {
-            "name": "email",
-            "qid": "3",
-            "text": "E-mail",
-            "type": "control_email"
-        }, {
-            "name": "address",
-            "qid": "4",
-            "text": "Address",
-            "type": "control_address"
-        }, {
-            "name": "phoneNumber",
-            "qid": "5",
-            "text": "Phone Number",
-            "type": "control_phone"
-        }, {
-            "name": "date",
-            "qid": "6",
-            "text": "Date",
-            "type": "control_datetime"
-        }, {
-            "name": "shortText",
-            "qid": "7",
-            "text": "Short Text Entry",
-            "type": "control_textbox"
-        }, {
-            "name": "longText",
-            "qid": "8",
-            "text": "Long Text Entry",
-            "type": "control_textarea"
-        }, {
-            "name": "clickTo9",
-            "qid": "9",
-            "text": "<p>Text</p>",
-            "type": "control_text"
-        }, {
-            "name": "dropdown",
-            "qid": "10",
-            "text": "Dropdown",
-            "type": "control_dropdown"
-        }, {
-            "name": "radioactive",
-            "qid": "11",
-            "text": "Radioactive",
-            "type": "control_radio"
-        }, {
-            "name": "checkboxes",
-            "qid": "12",
-            "text": "Checkboxes",
-            "type": "control_checkbox"
-        }, {
-            "name": "number",
-            "qid": "13",
-            "text": "Number",
-            "type": "control_number"
-        }, {
-            "name": "image",
-            "qid": "14",
-            "text": "True Mirror.622",
-            "type": "control_image"
-        }, {
-            "name": "upload",
-            "qid": "15",
-            "text": "Upload",
-            "type": "control_fileupload"
-        }]);
+        JotForm.prepareCalculationsOnTheFly([null, { "name": "name", "qid": "1", "text": "Name", "type": "control_fullname" }, { "name": "email", "qid": "2", "text": "Email", "type": "control_email" }, { "name": "address", "qid": "3", "text": "Address", "type": "control_address" }, { "name": "phoneNumber", "qid": "4", "text": "Phone Number", "type": "control_phone" }, { "name": "date", "qid": "5", "text": "Date", "type": "control_datetime" }, { "name": "sdfhgsdfghsdfghdfg", "qid": "6", "text": "sdfhgsdfghsdfghdfg", "type": "control_textbox" }, { "name": "saldfjh", "qid": "7", "text": "saldfjh", "type": "control_textarea" }, { "name": "clickTo8", "qid": "8", "text": "<p>asldfgjisadfljkhsdghsdg asdg asdsgo kasd glasj ildgkas dikgajs&nbsp;</p>", "type": "control_text" }, { "name": "clickTo9", "qid": "9", "text": "dorpdgpopdo", "type": "control_dropdown" }, { "name": "radioactive", "qid": "10", "text": "radioactive", "type": "control_radio" }, { "name": "chekcboxoeoseses", "qid": "11", "text": "chekcboxoeoseses", "type": "control_checkbox" }, { "name": "number", "qid": "12", "text": "Number", "type": "control_number" }, null, { "name": "clickTo14", "qid": "14", "text": "Click to edit...", "type": "control_fileupload" }]);
         </script>
     </div>
 </head>
 
 <body>
     <div class="jfForm-wrapper">
-        <form class="jotform-form" id="71924160223953" name="form_71924160223953" action="https://submit.jotformpro.com/submit/71924160223953/" method="post">
-            <input type="hidden" name="formID" value="71924160223953" />
+        <div class="jfWelcome-wrapper">
+            <div class="jfWelcome">
+                <div class="jfWelcome-imageWrapper"><img class="jfWelcome-image" src="https://www.jotform.com/images/form_welcome.svg" /></div>
+                <h1 id="header_welcomePage" class="jfWelcome-header form-header" data-component="header">Welcome</h1>
+                <p id="subHeader_welcomePage" class="jfWelcome-description form-subHeader">Please fill all questions.</p>
+                <div class="jfWelcome-buttonWrapper">
+                    <button class="jfWelcome-button" id="jfCard-welcome-start">START</button>
+                </div>
+            </div>
+        </div>
+        <form class="jotform-form" id="71973524623965" name="form_71973524623965" action="https://submit.jotformpro.com/submit/71973524623965/" method="post">
+            <input type="hidden" name="formID" value="71973524623965" />
             <ul class="jfForm-all form-section page-section form-all" id="cardAnimationWrapper">
-                <li class="form-line" data-type="control_fullname" id="id_2">
+                <li class="form-line" data-type="control_fullname" id="id_1">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
                             <div class="jfCard-index">1</div>
                             <div class="jfCard-question">
-                                <label for="first_2" class="jfQuestion-label isCenterAlign">Name</label>
-                                <p class="jfQuestion-description" id="input_2_description"></p>
+                                <label for="first_1" class="jfQuestion-label isCenterAlign">Name<span class="jfRequiredStar">* <span class="jfRequiredStar-message">This field is required</span></span>
+                                </label>
+                                <p class="jfQuestion-description" id="input_1_description"></p>
                                 <div class="jfQuestion-fields" data-wrapper-react="true">
                                     <div class="jfField" data-type="first">
-                                        <input type="text" id="first_2" name="q2_name[first]" class="form-textbox forFullname jfInput-input" size="10" value="" data-component="first" aria-required="false" aria-describedby="first_2_description" />
-                                        <div class="jfField-sublabel" for="first_2">First Name</div>
+                                        <input type="text" id="first_1" name="q1_name[first]" class="form-textbox validate[required] forFullname jfInput-input" size="10" value="" data-component="first" required="" aria-required="true" aria-describedby="first_1_description" />
+                                        <div class="jfField-sublabel" for="first_1">First Name</div>
                                     </div>
                                     <div class="jfField" data-type="last">
-                                        <input type="text" id="last_2" name="q2_name[last]" class="form-textbox forFullname jfInput-input" size="15" value="" data-component="last" aria-required="false" aria-describedby="last_2_description" />
-                                        <div class="jfField-sublabel" for="last_2">Last Name</div>
+                                        <input type="text" id="last_1" name="q1_name[last]" class="form-textbox validate[required] forFullname jfInput-input" size="15" value="" data-component="last" required="" aria-required="true" aria-describedby="last_1_description" />
+                                        <div class="jfField-sublabel" for="last_1">Last Name</div>
                                     </div>
                                 </div>
                             </div>
@@ -178,17 +60,18 @@
                         </div>
                     </div>
                 </li>
-                <li class="form-line" data-type="control_email" id="id_3">
+                <li class="form-line" data-type="control_email" id="id_2">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
                             <div class="jfCard-index">2</div>
                             <div class="jfCard-question">
-                                <label for="input_3" class="jfQuestion-label isCenterAlign">E-mail</label>
-                                <p class="jfQuestion-description" id="input_3_description"></p>
+                                <label for="input_2" class="jfQuestion-label isCenterAlign">Email<span class="jfRequiredStar">* <span class="jfRequiredStar-message">This field is required</span></span>
+                                </label>
+                                <p class="jfQuestion-description" id="input_2_description"></p>
                                 <div class="jfQuestion-fields">
                                     <div class="jfField" data-type="email">
-                                        <input type="email" id="input_3" name="q3_email" class="form-textbox validate[Email] forEmail jfInput-input" size="30" value="" data-component="email" aria-required="false" aria-describedby="input_3_description" />
-                                        <div class="jfField-sublabel" for="input_3">example@example.com</div>
+                                        <input type="email" id="input_2" name="q2_email" class="form-textbox validate[required, Email] forEmail jfInput-input" size="30" value="" data-component="email" required="" aria-required="true" aria-describedby="input_2_description" />
+                                        <div class="jfField-sublabel" for="input_2">example@example.com</div>
                                     </div>
                                 </div>
                             </div>
@@ -199,36 +82,36 @@
                         </div>
                     </div>
                 </li>
-                <li class="form-line" data-type="control_address" id="id_4">
+                <li class="form-line" data-type="control_address" id="id_3">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
                             <div class="jfCard-index">3</div>
                             <div class="jfCard-question">
-                                <label for="input_4_addr_line1" class="jfQuestion-label isCenterAlign">Address</label>
-                                <p class="jfQuestion-description" id="input_4_description"></p>
+                                <label for="input_3_addr_line1" class="jfQuestion-label isCenterAlign">Address</label>
+                                <p class="jfQuestion-description" id="input_3_description"></p>
                                 <div class="jfQuestion-fields" data-wrapper-react="true">
                                     <div class="jfField" data-type="address_line_1">
-                                        <input type="text" id="input_4_addr_line1" name="q4_address[addr_line1]" class="form-textbox form-address-line form-address-addr1 forAddress jfInput-input" value="" data-component="address_line_1" aria-required="false" aria-describedby="input_4_addr_line1_description" />
-                                        <div class="jfField-sublabel" for="input_4_addr_line1">Street Address</div>
+                                        <input type="text" id="input_3_addr_line1" name="q3_address[addr_line1]" class="form-textbox form-address-line form-address-addr1 forAddress jfInput-input" value="" data-component="address_line_1" aria-required="false" aria-describedby="input_3_addr_line1_description" />
+                                        <div class="jfField-sublabel" for="input_3_addr_line1">Street Address</div>
                                     </div>
                                     <div class="jfField" data-type="address_line_2">
-                                        <input type="text" id="input_4_addr_line2" name="q4_address[addr_line2]" class="form-textbox form-address-line form-address-addr2 forAddress jfInput-input" size="46" value="" data-component="address_line_2" aria-required="false" aria-describedby="input_4_addr_line2_description" />
-                                        <div class="jfField-sublabel" for="input_4_addr_line2">Street Address Line 2</div>
+                                        <input type="text" id="input_3_addr_line2" name="q3_address[addr_line2]" class="form-textbox form-address-line form-address-addr2 forAddress jfInput-input" size="46" value="" data-component="address_line_2" aria-required="false" aria-describedby="input_3_addr_line2_description" />
+                                        <div class="jfField-sublabel" for="input_3_addr_line2">Street Address Line 2</div>
                                     </div>
                                     <div class="jfField" data-type="city">
-                                        <input type="text" id="input_4_city" name="q4_address[city]" class="form-textbox form-address-city forAddress jfInput-input" size="21" value="" data-component="city" aria-required="false" aria-describedby="input_4_city_description" />
-                                        <div class="jfField-sublabel" for="input_4_city">City</div>
+                                        <input type="text" id="input_3_city" name="q3_address[city]" class="form-textbox form-address-city forAddress jfInput-input" size="21" value="" data-component="city" aria-required="false" aria-describedby="input_3_city_description" />
+                                        <div class="jfField-sublabel" for="input_3_city">City</div>
                                     </div>
                                     <div class="jfField" data-type="state">
-                                        <input type="text" id="input_4_state" name="q4_address[state]" class="form-textbox form-address-state forAddress jfInput-input" size="22" value="" data-component="state" aria-required="false" aria-describedby="input_4_state_description" />
-                                        <div class="jfField-sublabel" for="input_4_state">State / Province</div>
+                                        <input type="text" id="input_3_state" name="q3_address[state]" class="form-textbox form-address-state forAddress jfInput-input" size="22" value="" data-component="state" aria-required="false" aria-describedby="input_3_state_description" />
+                                        <div class="jfField-sublabel" for="input_3_state">State / Province</div>
                                     </div>
                                     <div class="jfField" data-type="zip">
-                                        <input type="text" id="input_4_postal" name="q4_address[postal]" class="form-textbox form-address-postal forAddress jfInput-input" size="10" value="" data-component="zip" aria-required="false" aria-describedby="input_4_postal_description" />
-                                        <div class="jfField-sublabel" for="input_4_postal">Postal / Zip Code</div>
+                                        <input type="text" id="input_3_postal" name="q3_address[postal]" class="form-textbox form-address-postal forAddress jfInput-input" size="10" value="" data-component="zip" aria-required="false" aria-describedby="input_3_postal_description" />
+                                        <div class="jfField-sublabel" for="input_3_postal">Postal / Zip Code</div>
                                     </div>
                                     <div class="jfField" data-type="country" style="display:none;">
-                                        <select data-component="country" id="input_4_country" name="q4_address[country]" class="form-dropdown form-address-country">
+                                        <select data-component="country" id="input_3_country" name="q3_address[country]" class="form-dropdown form-address-country">
                                             <option value="">Please Select</option>
                                             <option value="United States">United States</option>
                                             <option value="Afghanistan">Afghanistan</option>
@@ -736,7 +619,7 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="jfField-sublabel" for="input_4_country">Country</div>
+                                        <div class="jfField-sublabel" for="input_3_country">Country</div>
                                     </div>
                                 </div>
                             </div>
@@ -747,21 +630,21 @@
                         </div>
                     </div>
                 </li>
-                <li class="form-line" data-type="control_phone" id="id_5">
+                <li class="form-line" data-type="control_phone" id="id_4">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
                             <div class="jfCard-index">4</div>
                             <div class="jfCard-question">
-                                <label for="input_5_area" class="jfQuestion-label isCenterAlign">Phone Number</label>
-                                <p class="jfQuestion-description" id="input_5_description"></p>
+                                <label for="input_4_area" class="jfQuestion-label isCenterAlign">Phone Number</label>
+                                <p class="jfQuestion-description" id="input_4_description"></p>
                                 <div class="jfQuestion-fields" data-wrapper-react="true">
                                     <div class="jfField" data-type="areaCode">
-                                        <input type="tel" id="input_5_area" name="q5_phoneNumber[area]" class="form-textbox forPhone jfInput-input" size="3" value="" data-component="areaCode" aria-required="false" aria-describedby="input_5_area_description" />
-                                        <div class="jfField-sublabel" for="input_5_area">Area Code</div>
+                                        <input type="tel" id="input_4_area" name="q4_phoneNumber[area]" class="form-textbox forPhone jfInput-input" size="3" value="" data-component="areaCode" aria-required="false" aria-describedby="input_4_area_description" />
+                                        <div class="jfField-sublabel" for="input_4_area">Area Code</div>
                                     </div>
                                     <div class="jfField" data-type="phone">
-                                        <input type="tel" id="input_5_phone" name="q5_phoneNumber[phone]" class="form-textbox forPhone jfInput-input" size="8" value="" data-component="phone" aria-required="false" aria-describedby="input_5_phone_description" />
-                                        <div class="jfField-sublabel" for="input_5_phone">Phone Number</div>
+                                        <input type="tel" id="input_4_phone" name="q4_phoneNumber[phone]" class="form-textbox forPhone jfInput-input" size="8" value="" data-component="phone" aria-required="false" aria-describedby="input_4_phone_description" />
+                                        <div class="jfField-sublabel" for="input_4_phone">Phone Number</div>
                                     </div>
                                 </div>
                             </div>
@@ -772,34 +655,34 @@
                         </div>
                     </div>
                 </li>
-                <li class="form-line" data-type="control_datetime" id="id_6">
+                <li class="form-line" data-type="control_datetime" id="id_5">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
                             <div class="jfCard-index">5</div>
                             <div class="jfCard-question">
-                                <label for="lite_mode_6" class="jfQuestion-label isCenterAlign">Date</label>
-                                <p class="jfQuestion-description" id="input_6_description"></p>
+                                <label for="lite_mode_5" class="jfQuestion-label isCenterAlign">Date</label>
+                                <p class="jfQuestion-description" id="input_5_description"></p>
                                 <div class="jfQuestion-fields" data-wrapper-react="true">
                                     <div style="display:none;">
                                         <div class="jfField" data-type="month">
-                                            <input type="tel" id="month_6" name="q6_date[month]" class="form-textbox validate[limitDate] jfInput-input" size="2" value="" maxlength="2" data-maxlength="2" data-component="month" aria-required="false" aria-describedby="month_6_description" />
-                                            <div class="jfField-sublabel" for="month_6">Month</div>
+                                            <input type="tel" id="month_5" name="q5_date[month]" class="form-textbox validate[limitDate] jfInput-input" size="2" value="" maxlength="2" data-maxlength="2" data-component="month" aria-required="false" aria-describedby="month_5_description" />
+                                            <div class="jfField-sublabel" for="month_5">Month</div>
                                         </div>
                                         <div class="jfField" data-type="day">
-                                            <input type="tel" id="day_6" name="q6_date[day]" class="form-textbox validate[limitDate] jfInput-input" size="2" value="" maxlength="2" data-maxlength="2" data-component="day" aria-required="false" aria-describedby="day_6_description" />
-                                            <div class="jfField-sublabel" for="day_6">Day</div>
+                                            <input type="tel" id="day_5" name="q5_date[day]" class="form-textbox validate[limitDate] jfInput-input" size="2" value="" maxlength="2" data-maxlength="2" data-component="day" aria-required="false" aria-describedby="day_5_description" />
+                                            <div class="jfField-sublabel" for="day_5">Day</div>
                                         </div>
                                         <div class="jfField" data-type="year">
-                                            <input type="tel" id="year_6" name="q6_date[year]" class="form-textbox validate[limitDate] jfInput-input" size="4" value="" maxlength="4" data-maxlength="4" data-component="year" aria-required="false" aria-describedby="year_6_description" />
-                                            <div class="jfField-sublabel" for="year_6">Year</div>
+                                            <input type="tel" id="year_5" name="q5_date[year]" class="form-textbox validate[limitDate] jfInput-input" size="4" value="" maxlength="4" data-maxlength="4" data-component="year" aria-required="false" aria-describedby="year_5_description" />
+                                            <div class="jfField-sublabel" for="year_5">Year</div>
                                         </div>
                                     </div>
                                     <div class="jfField">
-                                        <input type="text" id="lite_mode_6" class="form-textbox validate[limitDate] jfInput-input" size="12" value="" maxlength="12" data-maxlength="12" data-format="mmddyyyy" data-seperator="-" aria-required="false" aria-describedby="lite_mode_6_description" />
-                                        <div class="jfField-sublabel" for="lite_mode_6"></div>
-                                    </div><img class="showAutoCalendar" alt="Pick a Date" id="input_6_pick" style="display:none;vertical-align:middle;" data-component="datetime" />
+                                        <input type="text" id="lite_mode_5" class="form-textbox validate[limitDate] jfInput-input" size="12" value="" maxlength="12" data-maxlength="12" data-format="mmddyyyy" data-seperator="-" aria-required="false" aria-describedby="lite_mode_5_description" />
+                                        <div class="jfField-sublabel" for="lite_mode_5">Date</div>
+                                    </div><img class="showAutoCalendar" alt="Pick a Date" id="input_5_pick" style="display:none;vertical-align:middle;" data-component="datetime" />
                                     <div class="jfCalendar-wrapper">
-                                        <div id="calendar-container-6"></div>
+                                        <div id="calendar-container-5"></div>
                                     </div>
                                 </div>
                             </div>
@@ -810,16 +693,37 @@
                         </div>
                     </div>
                 </li>
-                <li class="form-line" data-type="control_textbox" id="id_7">
+                <li class="form-line" data-type="control_textbox" id="id_6">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
                             <div class="jfCard-index">6</div>
                             <div class="jfCard-question">
-                                <label for="input_7" class="jfQuestion-label isCenterAlign">Short Text Entry</label>
-                                <p class="jfQuestion-description" id="input_7_description"></p>
+                                <label for="input_6" class="jfQuestion-label isCenterAlign">sdfhgsdfghsdfghdfg</label>
+                                <p class="jfQuestion-description" id="input_6_description"></p>
                                 <div class="jfQuestion-fields">
                                     <div class="jfField" data-type="textbox">
-                                        <input type="text" id="input_7" name="q7_shortText" data-type="input-textbox" class="form-textbox jfInput-input" size="20" value="" data-component="textbox" aria-required="false" aria-describedby="input_7_description" />
+                                        <input type="text" id="input_6" name="q6_sdfhgsdfghsdfghdfg" data-type="input-textbox" class="form-textbox jfInput-input" size="20" value="" data-component="textbox" aria-required="false" aria-describedby="input_6_description" />
+                                        <div class="jfField-sublabel" for="input_6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jfCard-actions">
+                                <button type="button" class="jfInput-button forPrev u-left" data-component="button">Previous</button>
+                                <button type="button" class="jfInput-button forNext u-right" data-component="button">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_textarea" id="id_7">
+                    <div class="jfCard-wrapper">
+                        <div class="jfCard">
+                            <div class="jfCard-index">7</div>
+                            <div class="jfCard-question">
+                                <label for="input_7" class="jfQuestion-label isCenterAlign">şaldfjh</label>
+                                <p class="jfQuestion-description" id="input_7_description"></p>
+                                <div class="jfQuestion-fields">
+                                    <div class="jfField isFilled">
+                                        <textarea id="input_7" name="q7_saldfjh" cols="40" rows="6" data-component="textarea" class="jfInput-textarea form-textarea"></textarea>
                                         <div class="jfField-sublabel" for="input_7"></div>
                                     </div>
                                 </div>
@@ -831,36 +735,13 @@
                         </div>
                     </div>
                 </li>
-                <li class="form-line" data-type="control_textarea" id="id_8">
-                    <div class="jfCard-wrapper">
-                        <div class="jfCard">
-                            <div class="jfCard-index">7</div>
-                            <div class="jfCard-question">
-                                <label for="input_8" class="jfQuestion-label isCenterAlign">Long Text Entry</label>
-                                <p class="jfQuestion-description" id="input_8_description"></p>
-                                <div class="jfQuestion-fields">
-                                    <div class="jfField isFilled">
-                                        <textarea id="input_8" name="q8_longText" cols="40" rows="6" data-component="textarea" class="jfInput-textarea form-textarea"></textarea>
-                                        <div class="jfField-sublabel" for="input_8"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="jfCard-actions">
-                                <button type="button" class="jfInput-button forPrev u-left" data-component="button">Previous</button>
-                                <button type="button" class="jfInput-button forNext u-right" data-component="button">Next</button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="form-line" data-type="control_text" id="id_9">
+                <li class="form-line" data-type="control_text" id="id_8">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
                             <div class="jfCard-index">8</div>
                             <div class="jfCard-question">
-                                <noscript></noscript>
-                                <noscript></noscript>
-                                <div id="text_9" class="form-html" data-component="text">
-                                    <p>Text</p>
+                                <div id="text_8" class="form-html" data-component="text">
+                                    <p>aşldfgjişadfljkhsdghsdg asdg asdşgo kasd glasj ildgkas dikgajs </p>
                                 </div>
                             </div>
                             <div class="jfCard-actions">
@@ -870,41 +751,40 @@
                         </div>
                     </div>
                 </li>
-                <li class="form-line" data-type="control_dropdown" id="id_10">
+                <li class="form-line" data-type="control_dropdown" id="id_9">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
                             <div class="jfCard-index">9</div>
                             <div class="jfCard-question">
-                                <label for="input_10" class="jfQuestion-label isCenterAlign">Dropdown</label>
-                                <p class="jfQuestion-description" id="input_10_description"></p>
+                                <label for="input_9" class="jfQuestion-label isCenterAlign">dorpdğpopdo</label>
+                                <p class="jfQuestion-description" id="input_9_description"></p>
                                 <div class="jfQuestion-fields">
                                     <div class="jfField">
-                                        <select name="q10_dropdown" data-component="dropdown" id="input_10" class="form-dropdown">
+                                        <select name="q9_clickTo9" data-component="dropdown" id="input_9" class="form-dropdown">
                                             <option value=""></option>
-                                            <option value="asgdadsfgad">asgdadsfgad</option>
-                                            <option value="hs">hs</option>
-                                            <option value="dgh">dgh</option>
-                                            <option value="df">df</option>
+                                            <option value="adfglhşkadghj">adfglhşkadghj</option>
+                                            <option value="adhfgsd">adhfgsd</option>
                                             <option value="gh">gh</option>
-                                            <option value="dfg">dfg</option>
-                                            <option value="hdf">hdf</option>
+                                            <option value="sfgh">sfgh</option>
+                                            <option value="dfgh">dfgh</option>
+                                            <option value="dfhg">dfhg</option>
+                                            <option value=""></option>
                                         </select>
                                         <div tabindex="0" class="jfInput-dropdown" datatype="multiselect">
                                             <div class="jfDropdown-wrapper" tabindex="-1">
                                                 <div class="jfDropdown-chipContainer"><span class="jfDropdown-chip isSingle"></span></div><span class="jfDropdown-toggle"><i class="fa fa-caret-down"></i></span></div>
                                             <div class="jfDropdown-optionListWrapper">
-                                                <ul name="q10_dropdown" data-component="dropdown" class="jfDropdown-optionList form-dropdown">
-                                                    <li data-value="asgdadsfgad" class="jfDropdown-optionListItem">asgdadsfgad</li>
-                                                    <li data-value="hs" class="jfDropdown-optionListItem">hs</li>
-                                                    <li data-value="dgh" class="jfDropdown-optionListItem">dgh</li>
-                                                    <li data-value="df" class="jfDropdown-optionListItem">df</li>
+                                                <ul name="q9_clickTo9" data-component="dropdown" class="jfDropdown-optionList form-dropdown">
+                                                    <li data-value="adfglhşkadghj" class="jfDropdown-optionListItem">adfglhşkadghj</li>
+                                                    <li data-value="adhfgsd" class="jfDropdown-optionListItem">adhfgsd</li>
                                                     <li data-value="gh" class="jfDropdown-optionListItem">gh</li>
-                                                    <li data-value="dfg" class="jfDropdown-optionListItem">dfg</li>
-                                                    <li data-value="hdf" class="jfDropdown-optionListItem">hdf</li>
+                                                    <li data-value="sfgh" class="jfDropdown-optionListItem">sfgh</li>
+                                                    <li data-value="dfgh" class="jfDropdown-optionListItem">dfgh</li>
+                                                    <li data-value="dfhg" class="jfDropdown-optionListItem">dfhg</li>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="jfField-sublabel" for="input_10"></div>
+                                        <div class="jfField-sublabel" for="input_9"></div>
                                     </div>
                                 </div>
                             </div>
@@ -915,29 +795,29 @@
                         </div>
                     </div>
                 </li>
-                <li class="form-line" data-type="control_radio" id="id_11">
+                <li class="form-line" data-type="control_radio" id="id_10">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
                             <div class="jfCard-index">10</div>
                             <div class="jfCard-question">
-                                <label for="input_11" class="jfQuestion-label isCenterAlign">Radioactive</label>
-                                <p class="jfQuestion-description" id="input_11_description"></p>
+                                <label for="input_10" class="jfQuestion-label isCenterAlign">radioactive</label>
+                                <p class="jfQuestion-description" id="input_10_description"></p>
                                 <div class="jfQuestion-fields form-multiple-column" data-columncount="2" data-component="radio">
                                     <div class="jfField form-radio-item">
                                         <label class="jfRadio withoutImage">
-                                            <input type="radio" class="jfRadio-input form-radio" name="q11_radioactive" value="Option 1" id="input_11_0" />
+                                            <input type="radio" class="jfRadio-input form-radio" name="q10_radioactive" value="Option 1" id="input_10_0" />
                                             <div class="jfRadio-label"><span class="jfRadio-customInput"><span class="jfRadio-customInputIcon"></span></span><img class="jfRadio-visual" /><span class="jfRadio-labelText">Option 1</span></div>
                                         </label>
                                     </div>
                                     <div class="jfField form-radio-item">
                                         <label class="jfRadio withoutImage">
-                                            <input type="radio" class="jfRadio-input form-radio" name="q11_radioactive" value="Option 2" id="input_11_1" />
+                                            <input type="radio" class="jfRadio-input form-radio" name="q10_radioactive" value="Option 2" id="input_10_1" />
                                             <div class="jfRadio-label"><span class="jfRadio-customInput"><span class="jfRadio-customInputIcon"></span></span><img class="jfRadio-visual" /><span class="jfRadio-labelText">Option 2</span></div>
                                         </label>
                                     </div>
                                     <div class="jfField form-radio-item">
                                         <label class="jfRadio withoutImage">
-                                            <input type="radio" class="jfRadio-input form-radio" name="q11_radioactive" value="Option 3" id="input_11_2" />
+                                            <input type="radio" class="jfRadio-input form-radio" name="q10_radioactive" value="Option 3" id="input_10_2" />
                                             <div class="jfRadio-label"><span class="jfRadio-customInput"><span class="jfRadio-customInputIcon"></span></span><img class="jfRadio-visual" /><span class="jfRadio-labelText">Option 3</span></div>
                                         </label>
                                     </div>
@@ -950,29 +830,29 @@
                         </div>
                     </div>
                 </li>
-                <li class="form-line" data-type="control_checkbox" id="id_12">
+                <li class="form-line" data-type="control_checkbox" id="id_11">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
                             <div class="jfCard-index">11</div>
                             <div class="jfCard-question">
-                                <label for="input_12_0" class="jfQuestion-label isCenterAlign">Checkboxes</label>
-                                <p class="jfQuestion-description" id="input_12_description"></p>
+                                <label for="input_11_0" class="jfQuestion-label isCenterAlign">chekcboxoeoseses</label>
+                                <p class="jfQuestion-description" id="input_11_description"></p>
                                 <div class="jfQuestion-fields form-multiple-column" data-columncount="2" data-component="checkbox">
                                     <div class="jfField form-checkbox-item">
                                         <label class="jfCheckbox withoutImage">
-                                            <input type="checkbox" class="jfCheckbox-input form-checkbox" name="q12_checkboxes[]" value="Option 1" id="input_12_0" />
+                                            <input type="checkbox" class="jfCheckbox-input form-checkbox" name="q11_chekcboxoeoseses[]" value="Option 1" id="input_11_0" />
                                             <div class="jfCheckbox-label"><span class="jfCheckbox-customInput"><span class="jfCheckbox-customInputIcon"></span></span><img class="jfCheckbox-visual" /><span class="jfCheckbox-labelText">Option 1</span></div>
                                         </label>
                                     </div>
                                     <div class="jfField form-checkbox-item">
                                         <label class="jfCheckbox withoutImage">
-                                            <input type="checkbox" class="jfCheckbox-input form-checkbox" name="q12_checkboxes[]" value="Option 2" id="input_12_1" />
+                                            <input type="checkbox" class="jfCheckbox-input form-checkbox" name="q11_chekcboxoeoseses[]" value="Option 2" id="input_11_1" />
                                             <div class="jfCheckbox-label"><span class="jfCheckbox-customInput"><span class="jfCheckbox-customInputIcon"></span></span><img class="jfCheckbox-visual" /><span class="jfCheckbox-labelText">Option 2</span></div>
                                         </label>
                                     </div>
                                     <div class="jfField form-checkbox-item">
                                         <label class="jfCheckbox withoutImage">
-                                            <input type="checkbox" class="jfCheckbox-input form-checkbox" name="q12_checkboxes[]" value="Option 3" id="input_12_2" />
+                                            <input type="checkbox" class="jfCheckbox-input form-checkbox" name="q11_chekcboxoeoseses[]" value="Option 3" id="input_11_2" />
                                             <div class="jfCheckbox-label"><span class="jfCheckbox-customInput"><span class="jfCheckbox-customInputIcon"></span></span><img class="jfCheckbox-visual" /><span class="jfCheckbox-labelText">Option 3</span></div>
                                         </label>
                                     </div>
@@ -985,17 +865,17 @@
                         </div>
                     </div>
                 </li>
-                <li class="form-line" data-type="control_number" id="id_13">
+                <li class="form-line" data-type="control_number" id="id_12">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
                             <div class="jfCard-index">12</div>
                             <div class="jfCard-question">
-                                <label for="input_13" class="jfQuestion-label isCenterAlign">Number</label>
-                                <p class="jfQuestion-description" id="input_13_description"></p>
+                                <label for="input_12" class="jfQuestion-label isCenterAlign">Number</label>
+                                <p class="jfQuestion-description" id="input_12_description"></p>
                                 <div class="jfQuestion-fields">
                                     <div class="jfField" data-type="number">
-                                        <input type="number" id="input_13" name="q13_number" data-type="input-number" class=" form-number-input form-textbox forNumber jfInput-input" size="5" value="" placeholder="ex: 23" data-component="number" aria-required="false" aria-describedby="input_13_description" />
-                                        <div class="jfField-sublabel" for="input_13"></div>
+                                        <input type="number" id="input_12" name="q12_number" data-type="input-number" class=" form-number-input form-textbox forNumber jfInput-input" size="5" value="" placeholder="ex: 23" data-component="number" aria-required="false" aria-describedby="input_12_description" />
+                                        <div class="jfField-sublabel" for="input_12"></div>
                                     </div>
                                 </div>
                             </div>
@@ -1006,30 +886,29 @@
                         </div>
                     </div>
                 </li>
-                <li class="form-line" data-type="control_image" id="id_14">
+                <li class="form-line" data-type="control_fileupload" id="id_14">
                     <div class="jfCard-wrapper">
                         <div class="jfCard">
                             <div class="jfCard-index">13</div>
                             <div class="jfCard-question">
-                                <noscript></noscript>
-                                <noscript></noscript><img alt="" class="form-image" style="border:0px;" src="https://www.jotform.com/uploads/csvital/form_files/True Mirror.622.jpg" height="235" width="309" data-component="image" /></div>
-                            <div class="jfCard-actions">
-                                <button type="button" class="jfInput-button forPrev u-left" data-component="button">Previous</button>
-                                <button type="button" class="jfInput-button forNext u-right" data-component="button">Next</button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="form-line" data-type="control_fileupload" id="id_15">
-                    <div class="jfCard-wrapper">
-                        <div class="jfCard">
-                            <div class="jfCard-index">14</div>
-                            <div class="jfCard-question">
-                                <label for="input_15" class="jfQuestion-label isCenterAlign">Upload</label>
-                                <p class="jfQuestion-description" id="input_15_description"></p>
+                                <label for="input_14" class="jfQuestion-label isCenterAlign">Click to edit...</label>
+                                <p class="jfQuestion-description" id="input_14_description"></p>
                                 <div class="jfField">
-                                    <input type="file" id="input_15" name="q15_upload" class="form-upload" data-imagevalidate="yes" data-file-accept="pdf, doc, docx, xls, xlsx, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" data-file-maxsize="1024" data-file-minsize="0" data-file-limit="0" data-component="fileupload" />
-                                    <div data-wrapper-react="true"></div>
+                                    <div class="jfUpload-wrapper">
+                                        <input type="file" id="input_14" name="q14_clickTo14" class="form-upload" data-imagevalidate="yes" data-file-accept="pdf, doc, docx, xls, xlsx, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif" data-file-maxsize="1024" data-file-minsize="0" data-file-limit="0" data-component="fileupload" />
+                                        <div class="jfUpload-container">
+                                            <div class="jfUpload-text-container">
+                                                <div class="jfUpload-icon" style="width:48px;height:1px;float:left;"></div>
+                                                <div class="jfUpload-text">
+                                                    <div class="jfUpload-heading">Drag and drop file here or</div>
+                                                    <div class="jfUpload-subheading">Max file size: 1MB</div>
+                                                </div>
+                                            </div>
+                                            <div class="jfUpload-button-container">
+                                                <div class="jfUpload-button">Browse Files</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="jfCard-actions">
@@ -1050,169 +929,25 @@
         <div class="jfProgress-itemWrapper">
             <div class="jfProgress-itemCell">
                 <div class="jfProgress-item" data-index="0">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Name</span></div>
-            </div>
-            <div class="jfProgress-itemCell">
-                <div class="jfProgress-item" data-index="1">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">E-mail</span></div>
-            </div>
-            <div class="jfProgress-itemCell">
-                <div class="jfProgress-item" data-index="2">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Address</span></div>
-            </div>
-            <div class="jfProgress-itemCell">
-                <div class="jfProgress-item" data-index="3">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Phone Number</span></div>
-            </div>
-            <div class="jfProgress-itemCell">
-                <div class="jfProgress-item" data-index="4">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Date</span></div>
-            </div>
-            <div class="jfProgress-itemCell">
-                <div class="jfProgress-item" data-index="5">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Short Text Entry</span></div>
-            </div>
-            <div class="jfProgress-itemCell">
-                <div class="jfProgress-item" data-index="6">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Long Text Entry</span></div>
-            </div>
-            <div class="jfProgress-itemCell">
-                <div class="jfProgress-item" data-index="7">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">&lt;p&gt;Text&lt;/p&gt;</span></div>
-            </div>
-            <div class="jfProgress-itemCell">
-                <div class="jfProgress-item" data-index="8">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Dropdown</span></div>
-            </div>
-            <div class="jfProgress-itemCell">
-                <div class="jfProgress-item" data-index="9">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Radioactive</span></div>
-            </div>
-            <div class="jfProgress-itemCell">
-                <div class="jfProgress-item" data-index="10">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Checkboxes</span></div>
-            </div>
-            <div class="jfProgress-itemCell">
-                <div class="jfProgress-item" data-index="11">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Number</span></div>
-            </div>
-            <div class="jfProgress-itemCell">
-                <div class="jfProgress-item" data-index="12">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">True Mirror.622</span></div>
-            </div>
-            <div class="jfProgress-itemCell">
-                <div class="jfProgress-item" data-index="13">
-                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Upload</span></div>
+                    <div class="jfProgress-itemCircle"><span class="jfProgress-itemPulse"></span></div><span class="jfProgress-itemLabel">Question Label</span></div>
             </div>
         </div>
-        <div class="jfProgress-info"><span class="jfProgress-infoContent" id="cardProgressToggle"><span class="iconSvg overview"><i class="svg-icon" name="overview"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.1 21.6" style="enable-background:new 0 0 21.1 21.6;" xml:space="preserve"> <g> <path d="M20.1,11.5c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,11.4,20.3,11.5,20.1,11.5z"/> </g> <g> <path d="M20.1,21.1c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,21,20.3,21.1,20.1,21.1z"/> </g> </svg></i></span><span class="jfProgress-infoContentText"><span class="cardProgress-currentIndex" id="cardProgress-currentIndex">1 </span><span class="cardProgress-questionCount" id="cardProgress-questionCount"> of 14</span><span class="cardProgress-seeAll">See All</span><span class="cardProgress-goBack">Go Back</span></span><span class="iconSvg overview"><i class="svg-icon" name="overview"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.1 21.6" style="enable-background:new 0 0 21.1 21.6;" xml:space="preserve"> <g> <path d="M20.1,11.5c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,11.4,20.3,11.5,20.1,11.5z"/> </g> <g> <path d="M20.1,21.1c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,21,20.3,21.1,20.1,21.1z"/> </g> </svg></i></span></span>
+        <div class="jfProgress-info"><span class="jfProgress-infoContent" id="cardProgressToggle"><span class="iconSvg overview"><i class="svg-icon" name="overview"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.1 21.6" style="enable-background:new 0 0 21.1 21.6;" xml:space="preserve"> <g> <path d="M20.1,11.5c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,11.4,20.3,11.5,20.1,11.5z"/> </g> <g> <path d="M20.1,21.1c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,21,20.3,21.1,20.1,21.1z"/> </g> </svg></i></span><span class="jfProgress-infoContentText"><span class="cardProgress-currentIndex" id="cardProgress-currentIndex">1 </span><span class="cardProgress-questionCount" id="cardProgress-questionCount"> of 13</span><span class="cardProgress-seeAll">See All</span><span class="cardProgress-goBack">Go Back</span></span><span class="iconSvg overview"><i class="svg-icon" name="overview"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21.1 21.6" style="enable-background:new 0 0 21.1 21.6;" xml:space="preserve"> <g> <path d="M20.1,11.5c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,11.4,20.3,11.5,20.1,11.5z"/> </g> <g> <path d="M20.1,21.1c-0.3,0-0.5-0.1-0.7-0.3l-8.8-8.8l-8.8,8.8c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l9.5-9.5c0.4-0.4,1-0.4,1.4,0 l9.5,9.5c0.4,0.4,0.4,1,0,1.4C20.6,21,20.3,21.1,20.1,21.1z"/> </g> </svg></i></span></span>
         </div>
     </div>
-    <input type="hidden" id="simple_spc" name="simple_spc" value="&quot;71924160223953-71924160223953&quot;" />
+    <input type="hidden" id="simple_spc" name="simple_spc" value="&quot;71973524623965-71973524623965&quot;" />
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="https://cdn.jotfor.ms/cardforms/layout.js"></script>
+    <script src="https://populatedrop.jotform.io/uxAnalytics/live.js" type="text/javascript"></script> 
     <script>
-    window.CardForm = new CardLayout({
-        "questionCount": 14,
-        "formMode": "form",
-        "questions": [{
-            "qid": "input_2",
-            "id": "2",
-            "isHidden": false,
-            "type": "control_fullname"
-        }, {
-            "qid": "input_3",
-            "id": "3",
-            "isHidden": false,
-            "type": "control_email"
-        }, {
-            "qid": "input_4",
-            "id": "4",
-            "isHidden": false,
-            "type": "control_address"
-        }, {
-            "qid": "input_5",
-            "id": "5",
-            "isHidden": false,
-            "type": "control_phone"
-        }, {
-            "qid": "input_6",
-            "id": "6",
-            "isHidden": false,
-            "type": "control_datetime"
-        }, {
-            "qid": "input_7",
-            "id": "7",
-            "isHidden": false,
-            "type": "control_textbox"
-        }, {
-            "qid": "input_8",
-            "id": "8",
-            "isHidden": false,
-            "type": "control_textarea"
-        }, {
-            "qid": "input_9",
-            "id": "9",
-            "isHidden": false,
-            "type": "control_text"
-        }, {
-            "qid": "input_10",
-            "id": "10",
-            "isHidden": false,
-            "type": "control_dropdown"
-        }, {
-            "qid": "input_11",
-            "id": "11",
-            "isHidden": false,
-            "type": "control_radio"
-        }, {
-            "qid": "input_12",
-            "id": "12",
-            "isHidden": false,
-            "type": "control_checkbox"
-        }, {
-            "qid": "input_13",
-            "id": "13",
-            "isHidden": false,
-            "type": "control_number"
-        }, {
-            "qid": "input_14",
-            "id": "14",
-            "isHidden": false,
-            "type": "control_image"
-        }, {
-            "qid": "input_15",
-            "id": "15",
-            "isHidden": false,
-            "type": "control_fileupload"
-        }]
-    });
+    window.CardForm = new CardLayout({ "questionCount": 13, "formMode": "welcome", "questions": [{ "qid": "input_1", "id": "1", "isHidden": false, "type": "control_fullname" }, { "qid": "input_2", "id": "2", "isHidden": false, "type": "control_email" }, { "qid": "input_3", "id": "3", "isHidden": false, "type": "control_address" }, { "qid": "input_4", "id": "4", "isHidden": false, "type": "control_phone" }, { "qid": "input_5", "id": "5", "isHidden": false, "type": "control_datetime" }, { "qid": "input_6", "id": "6", "isHidden": false, "type": "control_textbox" }, { "qid": "input_7", "id": "7", "isHidden": false, "type": "control_textarea" }, { "qid": "input_8", "id": "8", "isHidden": false, "type": "control_text" }, { "qid": "input_9", "id": "9", "isHidden": false, "type": "control_dropdown" }, { "qid": "input_10", "id": "10", "isHidden": false, "type": "control_radio" }, { "qid": "input_11", "id": "11", "isHidden": false, "type": "control_checkbox" }, { "qid": "input_12", "id": "12", "isHidden": false, "type": "control_number" }, { "qid": "input_14", "id": "14", "isHidden": false, "type": "control_fileupload" }] });
     </script>
     <script>
     JotForm.calendarMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     JotForm.calendarDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    JotForm.calendarOther = {
-        "today": "Today"
-    };
-    JotForm.setCalendar("6", false, {
-        "days": {
-            "monday": true,
-            "tuesday": true,
-            "wednesday": true,
-            "thursday": true,
-            "friday": true,
-            "saturday": true,
-            "sunday": true
-        },
-        "future": true,
-        "past": true,
-        "custom": false,
-        "ranges": false,
-        "start": "",
-        "end": ""
-    }, "calendar-container-6");
+    JotForm.calendarOther = { "today": "Today" };
+    JotForm.setCalendar("5", false, { "days": { "monday": true, "tuesday": true, "wednesday": true, "thursday": true, "friday": true, "saturday": true, "sunday": true }, "future": true, "past": true, "custom": false, "ranges": false, "start": "", "end": "" }, "calendar-container-5");
     </script>
-    <script src="https://populatedrop.jotform.io/uxAnalytics/uxanalytics.js" type="text/javascript"></script> 
 </body>
 
 </html>

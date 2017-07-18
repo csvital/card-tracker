@@ -273,19 +273,20 @@ function init () {
 
 	for (var i = 0; i < questionAreas.length; i++) {
 		questionAreas[i].addEventListener('click', function(evt){
-			console.log('evt', evt);
-			console.log('evt.target', evt.target);
-			console.log('evt.currentTarget', evt.currentTarget);
-			console.log('evt.target.id', evt.target.getAttribute('id'));
-			console.log('evt.currentTarget', evt.currentTarget.querySelector('label').getAttribute('for'));
-			
-			var isLabelExist = evt.currentTarget.querySelector('label') === null ? false : true;
-			console.log('isLabelExist', isLabelExist);
-			if( evt.currentTarget.querySelector('label').getAttribute('for') == evt.target.getAttribute('id') ){
-				console.log('clicked');
-				cardList[navigateHistory[navigateHistory.length-1]].totalClickCount++;
-			}
-		});
+			// console.log('evt', evt);
+			// console.log('evt.target', evt.target);
+			// console.log('evt.currentTarget', evt.currentTarget);
+			// console.log('evt.target.id', evt.target.getAttribute('id'));
+			// console.log('evt.currentTarget', evt.currentTarget.querySelector('label').getAttribute('for'));
+
+			// var isLabelExist = evt.currentTarget.querySelector('label') === null ? false : true;
+			// console.log('isLabelExist', isLabelExist);
+			// if( evt.currentTarget.querySelector('label').getAttribute('for') == evt.target.getAttribute('id') ){
+			// 	console.log('clicked');
+			// 	cardList[navigateHistory[navigateHistory.length-1]].totalClickCount++;
+			// }
+			console.log('clicked');
+		},false);
 	}
 }
 window.onload = init;
